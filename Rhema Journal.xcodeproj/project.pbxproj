@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		798278882AF9876000955B61 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798278872AF9876000955B61 /* Style.swift */; };
+		7982788A2AF987A600955B61 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798278892AF987A600955B61 /* Response.swift */; };
 		79C723D12AF8422B008F3783 /* Rhema_JournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723D02AF8422B008F3783 /* Rhema_JournalApp.swift */; };
 		79C723D32AF8422B008F3783 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723D22AF8422B008F3783 /* ContentView.swift */; };
-		79C723D52AF8422B008F3783 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723D42AF8422B008F3783 /* Item.swift */; };
+		79C723D52AF8422B008F3783 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723D42AF8422B008F3783 /* Entry.swift */; };
 		79C723D72AF8422C008F3783 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C723D62AF8422C008F3783 /* Assets.xcassets */; };
 		79C723DA2AF8422C008F3783 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C723D92AF8422C008F3783 /* Preview Assets.xcassets */; };
 		79C723E42AF8422C008F3783 /* Rhema_JournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723E32AF8422C008F3783 /* Rhema_JournalTests.swift */; };
@@ -35,10 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		798278872AF9876000955B61 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		798278892AF987A600955B61 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		79C723CD2AF8422B008F3783 /* Rhema Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rhema Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C723D02AF8422B008F3783 /* Rhema_JournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rhema_JournalApp.swift; sourceTree = "<group>"; };
 		79C723D22AF8422B008F3783 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		79C723D42AF8422B008F3783 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		79C723D42AF8422B008F3783 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		79C723D62AF8422C008F3783 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79C723D92AF8422C008F3783 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		79C723DF2AF8422C008F3783 /* Rhema JournalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rhema JournalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +77,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		798278852AF9869D00955B61 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				79C723D42AF8422B008F3783 /* Entry.swift */,
+				798278872AF9876000955B61 /* Style.swift */,
+				798278892AF987A600955B61 /* Response.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		798278862AF986CC00955B61 /* vViews */ = {
+			isa = PBXGroup;
+			children = (
+				79C723D22AF8422B008F3783 /* ContentView.swift */,
+			);
+			path = vViews;
+			sourceTree = "<group>";
+		};
 		79C723C42AF8422B008F3783 = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				79C723D02AF8422B008F3783 /* Rhema_JournalApp.swift */,
-				79C723D22AF8422B008F3783 /* ContentView.swift */,
-				79C723D42AF8422B008F3783 /* Item.swift */,
+				798278862AF986CC00955B61 /* vViews */,
+				798278852AF9869D00955B61 /* Models */,
 				79C723D62AF8422C008F3783 /* Assets.xcassets */,
 				79C723D82AF8422C008F3783 /* Preview Content */,
 			);
@@ -261,8 +283,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				79C723D32AF8422B008F3783 /* ContentView.swift in Sources */,
-				79C723D52AF8422B008F3783 /* Item.swift in Sources */,
+				79C723D52AF8422B008F3783 /* Entry.swift in Sources */,
 				79C723D12AF8422B008F3783 /* Rhema_JournalApp.swift in Sources */,
+				798278882AF9876000955B61 /* Style.swift in Sources */,
+				7982788A2AF987A600955B61 /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,8 +455,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,8 +483,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

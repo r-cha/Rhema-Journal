@@ -7,6 +7,7 @@ A grid that displays all Entrys.
 
 import SwiftUI
 
+
 struct JournalView: View {
     var entries: [Entry]
     let selectEntry: (Entry) -> Void
@@ -16,9 +17,11 @@ struct JournalView: View {
         ScrollView {
             LazyVGrid(
                 columns: [GridItem(Design.galleryGridSize)],
-                spacing: 20
+                spacing: 10
             ) {
-                if Design.editFeatureEnabled {
+                // Check if most recent entry is from today
+                if let mostRecentEntry = entries.first, !Calendar.current.isDateInToday(mostRecentEntry.timestamp) {
+                    // Button to add an entry for today
                     JournalItemView(backgroundStyle: .fill.tertiary, action: addEntry) {
                         LabeledContent("Add Entry") {
                             Image(systemName: "plus")
@@ -28,6 +31,7 @@ struct JournalView: View {
                     .shadow(radius: 2)
                 }
 
+                // List all past entries
                 ForEach(entries) { entry in
                     JournalItemView(backgroundStyle: Color.cardFront) {
                         selectEntry(entry)

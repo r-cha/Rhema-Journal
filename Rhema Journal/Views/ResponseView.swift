@@ -10,7 +10,7 @@ struct ResponseView: View {
                 .fixedSize(horizontal: false, vertical: true)
             TextEditor(text: $promptResponse.response)
                 .border(Color.gray, width: 0.5)
+                .frame(height: 100)
         }
-        .padding()
     }
 }

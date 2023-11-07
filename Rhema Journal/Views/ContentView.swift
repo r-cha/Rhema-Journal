@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Query private var entries: [Entry]
+    @Query(sort: [SortDescriptor(\Entry.timestamp, order: .reverse)] ) private var entries: [Entry]
     @State private var navigationPath: [Entry] = []
     @Environment(\.modelContext) private var modelContext
 
@@ -18,11 +18,9 @@ struct ContentView: View {
             JournalView(entries: entries) { entry in
                 withAnimation { navigationPath.append(entry) }
             } addEntry: {
-                let newEntry = Entry(style: Style.lectio, promptResponses: Prompts[Style.lectio] ?? [])
+                let newEntry = Entry(style: Style.lectio, promptResponses: init_prompts(style: Style.lectio))
                 modelContext.insert(newEntry)
-                withAnimation {
-                    navigationPath.append(newEntry)
-                }
+                withAnimation { navigationPath.append(newEntry) }
             }
             .padding()
         }

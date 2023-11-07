@@ -54,16 +54,3 @@ extension Entry: Hashable {
         hasher.combine(promptResponses)
     }
 }
-
-
-// MARK: Migration
-
-struct JournalMigrationPlan: SchemaMigrationPlan {
-    static let schemas: [VersionedSchema.Type] = [JournalVersionedSchema.self]
-    static let stages: [MigrationStage] = []
-}
-
-struct JournalVersionedSchema: VersionedSchema {
-    static let models: [any PersistentModel.Type] = [Entry.self]
-    static let versionIdentifier: Schema.Version = .init(1, 0, 0)
-}

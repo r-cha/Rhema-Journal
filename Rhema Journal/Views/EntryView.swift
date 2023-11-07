@@ -14,13 +14,17 @@ struct EntryView: View {
     var body: some View {
         NavigationView {
             Form {
-                Picker("Type", selection: $entry.style) {
-                    ForEach(Style.allCases, id: \.self) { type in
-                        Text(type.rawValue)
+                Section {
+                    Picker("Type", selection: $entry.style) {
+                        ForEach(Style.allCases, id: \.self) { type in
+                            Text(type.rawValue)
+                        }
                     }
-                }
-                .onChange(of: entry.style) { old, newValue in
-                    entry.promptResponses = Prompts[newValue] ?? []
+                    .onChange(of: entry.style) { old, newValue in
+                        entry.promptResponses = init_prompts(style: newValue)
+                    }
+                } header: {
+                    Text("Settings")
                 }
 
                 ForEach(entry.promptResponses.indices, id: \.self) { index in

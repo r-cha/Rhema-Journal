@@ -28,9 +28,9 @@ final class Entry {
     
     @Attribute var _style: Style.RawValue
     
-    init(entryType: Style, promptResponses: [PromptResponse]) {
-        self.timestamp = Date()
-        self._style = entryType.rawValue
+    init(style: Style, promptResponses: [PromptResponse], timestamp: Date = .now) {
+        self.timestamp = timestamp
+        self._style = style.rawValue
         self.promptResponses = promptResponses
     }
     
@@ -53,4 +53,17 @@ extension Entry: Hashable {
         hasher.combine(style)
         hasher.combine(promptResponses)
     }
+}
+
+
+// MARK: Migration
+
+struct JournalMigrationPlan: SchemaMigrationPlan {
+    static let schemas: [VersionedSchema.Type] = [JournalVersionedSchema.self]
+    static let stages: [MigrationStage] = []
+}
+
+struct JournalVersionedSchema: VersionedSchema {
+    static let models: [any PersistentModel.Type] = [Entry.self]
+    static let versionIdentifier: Schema.Version = .init(1, 0, 0)
 }

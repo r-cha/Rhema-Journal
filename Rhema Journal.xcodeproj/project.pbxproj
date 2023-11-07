@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		798278882AF9876000955B61 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798278872AF9876000955B61 /* Style.swift */; };
 		7982788A2AF987A600955B61 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798278892AF987A600955B61 /* Response.swift */; };
+		79AEAAAC2AF9AC7F003AC969 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAAB2AF9AC7F003AC969 /* JournalView.swift */; };
+		79AEAAAF2AF9ACF6003AC969 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAAE2AF9ACF6003AC969 /* Design.swift */; };
+		79AEAAB12AF9ADC7003AC969 /* JournalItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAB02AF9ADC7003AC969 /* JournalItemView.swift */; };
+		79AEAAB32AF9AE88003AC969 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAB22AF9AE88003AC969 /* EntryView.swift */; };
+		79AEAAB72AF9AFEF003AC969 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAB62AF9AFEF003AC969 /* PreviewData.swift */; };
+		79AEAAB92AF9B031003AC969 /* PreviewJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAB82AF9B031003AC969 /* PreviewJournal.swift */; };
+		79AEAABB2AF9B803003AC969 /* ResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAABA2AF9B803003AC969 /* ResponseView.swift */; };
 		79C723D12AF8422B008F3783 /* Rhema_JournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723D02AF8422B008F3783 /* Rhema_JournalApp.swift */; };
 		79C723D32AF8422B008F3783 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723D22AF8422B008F3783 /* ContentView.swift */; };
 		79C723D52AF8422B008F3783 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723D42AF8422B008F3783 /* Entry.swift */; };
@@ -39,6 +46,13 @@
 /* Begin PBXFileReference section */
 		798278872AF9876000955B61 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		798278892AF987A600955B61 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		79AEAAAB2AF9AC7F003AC969 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
+		79AEAAAE2AF9ACF6003AC969 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		79AEAAB02AF9ADC7003AC969 /* JournalItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalItemView.swift; sourceTree = "<group>"; };
+		79AEAAB22AF9AE88003AC969 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
+		79AEAAB62AF9AFEF003AC969 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		79AEAAB82AF9B031003AC969 /* PreviewJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewJournal.swift; sourceTree = "<group>"; };
+		79AEAABA2AF9B803003AC969 /* ResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseView.swift; sourceTree = "<group>"; };
 		79C723CD2AF8422B008F3783 /* Rhema Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rhema Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C723D02AF8422B008F3783 /* Rhema_JournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rhema_JournalApp.swift; sourceTree = "<group>"; };
 		79C723D22AF8422B008F3783 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,16 +97,30 @@
 				79C723D42AF8422B008F3783 /* Entry.swift */,
 				798278872AF9876000955B61 /* Style.swift */,
 				798278892AF987A600955B61 /* Response.swift */,
+				79AEAAB62AF9AFEF003AC969 /* PreviewData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		798278862AF986CC00955B61 /* vViews */ = {
+		798278862AF986CC00955B61 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				79C723D22AF8422B008F3783 /* ContentView.swift */,
+				79AEAAAB2AF9AC7F003AC969 /* JournalView.swift */,
+				79AEAAB02AF9ADC7003AC969 /* JournalItemView.swift */,
+				79AEAAB22AF9AE88003AC969 /* EntryView.swift */,
+				79AEAABA2AF9B803003AC969 /* ResponseView.swift */,
 			);
-			path = vViews;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		79AEAAAD2AF9ACCD003AC969 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				79AEAAAE2AF9ACF6003AC969 /* Design.swift */,
+				79AEAAB82AF9B031003AC969 /* PreviewJournal.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 		79C723C42AF8422B008F3783 = {
@@ -118,8 +146,9 @@
 		79C723CF2AF8422B008F3783 /* Rhema Journal */ = {
 			isa = PBXGroup;
 			children = (
+				79AEAAAD2AF9ACCD003AC969 /* Support */,
 				79C723D02AF8422B008F3783 /* Rhema_JournalApp.swift */,
-				798278862AF986CC00955B61 /* vViews */,
+				798278862AF986CC00955B61 /* Views */,
 				798278852AF9869D00955B61 /* Models */,
 				79C723D62AF8422C008F3783 /* Assets.xcassets */,
 				79C723D82AF8422C008F3783 /* Preview Content */,
@@ -283,10 +312,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				79C723D32AF8422B008F3783 /* ContentView.swift in Sources */,
+				79AEAAAF2AF9ACF6003AC969 /* Design.swift in Sources */,
 				79C723D52AF8422B008F3783 /* Entry.swift in Sources */,
+				79AEAAB72AF9AFEF003AC969 /* PreviewData.swift in Sources */,
 				79C723D12AF8422B008F3783 /* Rhema_JournalApp.swift in Sources */,
 				798278882AF9876000955B61 /* Style.swift in Sources */,
 				7982788A2AF987A600955B61 /* Response.swift in Sources */,
+				79AEAAB92AF9B031003AC969 /* PreviewJournal.swift in Sources */,
+				79AEAAAC2AF9AC7F003AC969 /* JournalView.swift in Sources */,
+				79AEAAB12AF9ADC7003AC969 /* JournalItemView.swift in Sources */,
+				79AEAAB32AF9AE88003AC969 /* EntryView.swift in Sources */,
+				79AEAABB2AF9B803003AC969 /* ResponseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

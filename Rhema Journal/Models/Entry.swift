@@ -8,6 +8,8 @@
 import Foundation
 import SwiftData
 
+import BibleKit
+
 
 var dateFormatter: DateFormatter {
     let formatter = DateFormatter()
@@ -21,16 +23,22 @@ final class Entry {
     var timestamp: Date
     var promptResponses: [PromptResponse]
     
+    @Transient var bibleReference: Reference  {
+        get { RefParser.parseReferences(_bibleReference)[0] }
+        set { _bibleReference = newValue.toString() }
+    }
+    @Attribute var _bibleReference: String
+    
     @Transient var style: Style  {
         get { Style(rawValue: _style)! }
         set { _style = newValue.rawValue }
     }
-    
     @Attribute var _style: Style.RawValue
     
-    init(style: Style, promptResponses: [PromptResponse], timestamp: Date = .now) {
+    init(style: Style, bibleReference: Reference, promptResponses: [PromptResponse], timestamp: Date = .now) {
         self.timestamp = timestamp
         self._style = style.rawValue
+        self._bibleReference = bibleReference.toString()
         self.promptResponses = promptResponses
     }
     
@@ -53,4 +61,24 @@ extension Entry: Hashable {
         hasher.combine(style)
         hasher.combine(promptResponses)
     }
+}
+
+extension Reference: Equatable {
+    public static func == (lhs: BibleKit.Reference, rhs: BibleKit.Reference) -> Bool {
+        lhs.bookNumber == rhs.bookNumber &&
+        lhs.endChapterNumber == rhs.endChapterNumber &&
+        lhs.startVerseNumber == rhs.startVerseNumber
+    }
+}
+
+// MARK: Migration
+
+struct EntryMigrationPlan: SchemaMigrationPlan {
+    static let schemas: [VersionedSchema.Type] = [EntryVersionedSchema.self]
+    static let stages: [MigrationStage] = []
+}
+
+struct EntryVersionedSchema: VersionedSchema {
+    static let models: [any PersistentModel.Type] = [Entry.self]
+    static let versionIdentifier: Schema.Version = .init(1, 0, 0)
 }

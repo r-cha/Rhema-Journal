@@ -18,9 +18,9 @@ struct JournalItemView<Content: View, S: ShapeStyle>: View {
                 label
                     .font(Design.cardViewingFont)
                     .multilineTextAlignment(.center)
-                    .lineLimit(3)
+                    .lineLimit(1)
                     .minimumScaleFactor(0.5)
-                    .padding()
+                    .padding();
             }
         }
         .backgroundStyle(backgroundStyle)

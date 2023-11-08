@@ -36,7 +36,10 @@ struct JournalView: View {
                     JournalItemView(backgroundStyle: Color.cardFront) {
                         selectEntry(entry)
                     } label: {
-                        Text(entry.title())
+                        VStack {
+                            Text(entry.title())
+                            Text(entry.bibleReference.toString()).font(.subheadline)
+                        }
                     }
                 }
             }

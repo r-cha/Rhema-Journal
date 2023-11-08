@@ -8,8 +8,12 @@ The main view that contains the majority of the app's content.
 import SwiftUI
 import SwiftData
 
+import BibleKit
+
 struct ContentView: View {
-    @Query(sort: [SortDescriptor(\Entry.timestamp, order: .reverse)] ) private var entries: [Entry]
+    @Query(
+        sort: [SortDescriptor(\Entry.timestamp, order: .reverse)]
+    ) private var entries: [Entry]
     @State private var navigationPath: [Entry] = []
     @Environment(\.modelContext) private var modelContext
 
@@ -18,7 +22,8 @@ struct ContentView: View {
             JournalView(entries: entries) { entry in
                 withAnimation { navigationPath.append(entry) }
             } addEntry: {
-                let newEntry = Entry(style: Style.lectio, promptResponses: init_prompts(style: Style.lectio))
+                // TODO: Start w yesterday's chapter + 1
+                let newEntry = Entry(style: Style.lectio, bibleReference: Reference(book:"Genesis", startChapter:1, startVerse:1), promptResponses: init_prompts(style: Style.lectio))
                 modelContext.insert(newEntry)
                 withAnimation { navigationPath.append(newEntry) }
             }
@@ -30,7 +35,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .modelContainer(previewContainer)
-    #if os(macOS)
-        .frame(minWidth: 500, minHeight: 500)
-    #endif
 }

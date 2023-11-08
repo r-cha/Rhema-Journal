@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7965BEAE2AFAFB9500062BEB /* BibleKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7965BEAD2AFAFB9500062BEB /* BibleKit */; };
+		7965BEB02AFAFFF300062BEB /* ReferencePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7965BEAF2AFAFFF300062BEB /* ReferencePicker.swift */; };
+		7965BEB22AFB006D00062BEB /* BibleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7965BEB12AFB006D00062BEB /* BibleData.swift */; };
 		798278882AF9876000955B61 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798278872AF9876000955B61 /* Style.swift */; };
 		7982788A2AF987A600955B61 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798278892AF987A600955B61 /* Response.swift */; };
 		79AEAAAC2AF9AC7F003AC969 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAAB2AF9AC7F003AC969 /* JournalView.swift */; };
@@ -44,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7965BEAF2AFAFFF300062BEB /* ReferencePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencePicker.swift; sourceTree = "<group>"; };
+		7965BEB12AFB006D00062BEB /* BibleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleData.swift; sourceTree = "<group>"; };
 		798278872AF9876000955B61 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		798278892AF987A600955B61 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		79AEAAAB2AF9AC7F003AC969 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7965BEAE2AFAFB9500062BEB /* BibleKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +104,7 @@
 				798278872AF9876000955B61 /* Style.swift */,
 				798278892AF987A600955B61 /* Response.swift */,
 				79AEAAB62AF9AFEF003AC969 /* PreviewData.swift */,
+				7965BEB12AFB006D00062BEB /* BibleData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -110,6 +117,7 @@
 				79AEAAB02AF9ADC7003AC969 /* JournalItemView.swift */,
 				79AEAAB22AF9AE88003AC969 /* EntryView.swift */,
 				79AEAABA2AF9B803003AC969 /* ResponseView.swift */,
+				7965BEAF2AFAFFF300062BEB /* ReferencePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +205,9 @@
 			dependencies = (
 			);
 			name = "Rhema Journal";
+			packageProductDependencies = (
+				7965BEAD2AFAFB9500062BEB /* BibleKit */,
+			);
 			productName = "Rhema Journal";
 			productReference = 79C723CD2AF8422B008F3783 /* Rhema Journal.app */;
 			productType = "com.apple.product-type.application";
@@ -269,6 +280,9 @@
 				Base,
 			);
 			mainGroup = 79C723C42AF8422B008F3783;
+			packageReferences = (
+				7965BEAC2AFAFB9500062BEB /* XCRemoteSwiftPackageReference "BibleKit" */,
+			);
 			productRefGroup = 79C723CE2AF8422B008F3783 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -314,12 +328,14 @@
 				79C723D32AF8422B008F3783 /* ContentView.swift in Sources */,
 				79AEAAAF2AF9ACF6003AC969 /* Design.swift in Sources */,
 				79C723D52AF8422B008F3783 /* Entry.swift in Sources */,
+				7965BEB02AFAFFF300062BEB /* ReferencePicker.swift in Sources */,
 				79AEAAB72AF9AFEF003AC969 /* PreviewData.swift in Sources */,
 				79C723D12AF8422B008F3783 /* Rhema_JournalApp.swift in Sources */,
 				798278882AF9876000955B61 /* Style.swift in Sources */,
 				7982788A2AF987A600955B61 /* Response.swift in Sources */,
 				79AEAAB92AF9B031003AC969 /* PreviewJournal.swift in Sources */,
 				79AEAAAC2AF9AC7F003AC969 /* JournalView.swift in Sources */,
+				7965BEB22AFB006D00062BEB /* BibleData.swift in Sources */,
 				79AEAAB12AF9ADC7003AC969 /* JournalItemView.swift in Sources */,
 				79AEAAB32AF9AE88003AC969 /* EntryView.swift in Sources */,
 				79AEAABB2AF9B803003AC969 /* ResponseView.swift in Sources */,
@@ -486,6 +502,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Rhema Journal/Preview Content\"";
+				DEVELOPMENT_TEAM = CLWAHA5TVR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -514,6 +531,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Rhema Journal/Preview Content\"";
+				DEVELOPMENT_TEAM = CLWAHA5TVR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -646,6 +664,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7965BEAC2AFAFB9500062BEB /* XCRemoteSwiftPackageReference "BibleKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mazz/BibleKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7965BEAD2AFAFB9500062BEB /* BibleKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7965BEAC2AFAFB9500062BEB /* XCRemoteSwiftPackageReference "BibleKit" */;
+			productName = BibleKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 79C723C52AF8422B008F3783 /* Project object */;
 }

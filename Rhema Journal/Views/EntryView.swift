@@ -7,6 +7,8 @@ A reusable view for content presented as a card visually.
 
 import SwiftUI
 
+import BibleKit
+
 
 struct EntryView: View {
     @Bindable var entry: Entry
@@ -23,12 +25,19 @@ struct EntryView: View {
                     .onChange(of: entry.style) { old, newValue in
                         entry.promptResponses = init_prompts(style: newValue)
                     }
+
+                    BibleVersePicker(ref: $entry.bibleReference)
+
                 } header: {
                     Text("Settings")
                 }
 
-                ForEach(entry.promptResponses.indices, id: \.self) { index in
-                    ResponseView(promptResponse: entry.promptResponses[index])
+                Section {
+                    ForEach(entry.promptResponses.indices, id: \.self) { index in
+                        ResponseView(promptResponse: entry.promptResponses[index])
+                    }
+                } header: {
+                    Text("Responses")
                 }
             }
             .navigationBarTitle(entry.title())

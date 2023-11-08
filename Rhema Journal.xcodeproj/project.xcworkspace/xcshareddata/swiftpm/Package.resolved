@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "biblekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mazz/BibleKit",
+      "state" : {
+        "revision" : "06e52bc2f85fdb4a524ea491fe47e2f5aca8fec4",
+        "version" : "1.0.5"
+      }
+    }
+  ],
+  "version" : 2
+}

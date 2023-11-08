@@ -26,7 +26,7 @@ struct EntryView: View {
                         entry.promptResponses = init_prompts(style: newValue)
                     }
 
-                    BibleVersePicker(ref: $entry.bibleReference)
+                    BibleVersePicker()
 
                 } header: {
                     Text("Settings")

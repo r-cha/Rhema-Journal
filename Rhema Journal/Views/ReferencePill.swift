@@ -10,18 +10,16 @@ import SwiftUI
 import BibleKit
 
 struct ReferencePill: View {
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     var reference: String
 
     var body: some View {
         Text(reference)
             .fontWeight(.light)
             .padding([.leading, .trailing], 4)
-            .background(
-                Rectangle()
-                    .fill(Color.green.opacity(0.3))
-                    .border(Color.green, width: 1)
-                    .cornerRadius(2))
+            .background(Capsule().fill(Color.green.opacity(colorScheme == .light ? 0.3 : 0.7)))
             .multilineTextAlignment(.center)
+            .font(.title3)
     }
 }
 

@@ -23,11 +23,12 @@ struct ContentView: View {
                 withAnimation { navigationPath.append(entry) }
             } addEntry: {
                 // TODO: Start w yesterday's chapter + 1
-                let newEntry = Entry(style: Style.lectio, bibleReference: Reference(book:"Genesis", startChapter:1, startVerse:1), promptResponses: init_prompts(style: Style.lectio))
+                let newEntry = Entry(style: Style.lectio, promptResponses: init_prompts(style: Style.lectio))
                 modelContext.insert(newEntry)
                 withAnimation { navigationPath.append(newEntry) }
             }
             .padding()
+            .navigationTitle("Rhema Journal")
         }
     }
 }

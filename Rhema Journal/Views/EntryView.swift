@@ -12,9 +12,14 @@ import BibleKit
 
 struct EntryView: View {
     @Bindable var entry: Entry
+    
+    init(entry: Entry) {
+        self.entry = entry
+        UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).adjustsFontSizeToFitWidth = true
+    }
 
     var body: some View {
-        NavigationView {
+        VStack {
             Form {
                 Section {
                     Picker("Type", selection: $entry.style) {
@@ -26,7 +31,7 @@ struct EntryView: View {
                         entry.promptResponses = init_prompts(style: newValue)
                     }
 
-                    BibleVersePicker()
+                    BibleVersePicker(references: $entry.references)
 
                 } header: {
                     Text("Settings")

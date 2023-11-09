@@ -21,13 +21,8 @@ var dateFormatter: DateFormatter {
 @Model
 final class Entry {
     var timestamp: Date
+    var references: String = ""
     var promptResponses: [PromptResponse]
-    
-    @Transient var bibleReference: Reference  {
-        get { RefParser.parseReferences(_bibleReference)[0] }
-        set { _bibleReference = newValue.toString() }
-    }
-    @Attribute var _bibleReference: String
     
     @Transient var style: Style  {
         get { Style(rawValue: _style)! }
@@ -35,10 +30,10 @@ final class Entry {
     }
     @Attribute var _style: Style.RawValue
     
-    init(style: Style, bibleReference: Reference, promptResponses: [PromptResponse], timestamp: Date = .now) {
+    init(style: Style, promptResponses: [PromptResponse], references: String = "", timestamp: Date = .now) {
         self.timestamp = timestamp
         self._style = style.rawValue
-        self._bibleReference = bibleReference.toString()
+        self.references = references
         self.promptResponses = promptResponses
     }
     

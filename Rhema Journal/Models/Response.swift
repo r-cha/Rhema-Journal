@@ -14,14 +14,17 @@ class PromptResponse {
     var id = UUID()
     var prompt: String
     var response: String
+    var order: Int?
 
-    init(prompt: String) {
+    init(prompt: String, order: Int? = nil) {
         self.prompt = prompt
         self.response = ""
+        self.order = order
     }
 
     init(prompt: String, response: String) {
         self.prompt = prompt
         self.response = response
+        self.order = nil
     }
 }

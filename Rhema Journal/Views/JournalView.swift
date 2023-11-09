@@ -7,11 +7,15 @@ A grid that displays all Entrys.
 
 import SwiftUI
 
+import BibleKit
+
 
 struct JournalView: View {
     var entries: [Entry]
     let selectEntry: (Entry) -> Void
     let addEntry: () -> Void
+    
+    @State private var parsedVerses: [String] = []
 
     var body: some View {
         ScrollView {
@@ -20,7 +24,7 @@ struct JournalView: View {
                 spacing: 10
             ) {
                 // Check if most recent entry is from today
-                if let mostRecentEntry = entries.first, !Calendar.current.isDateInToday(mostRecentEntry.timestamp) {
+                if entries.isEmpty || !Calendar.current.isDateInToday(entries.first?.timestamp ?? Date.distantPast) {
                     // Button to add an entry for today
                     JournalItemView(backgroundStyle: .fill.tertiary, action: addEntry) {
                         LabeledContent("Add Entry") {
@@ -38,7 +42,17 @@ struct JournalView: View {
                     } label: {
                         VStack {
                             Text(entry.title())
-                            Text(entry.bibleReference.toString()).font(.subheadline)
+                            if let parsedVerses = Optional(RefParser.parseReferences(entry.references)) {
+                                if parsedVerses.count > 0 {
+                                    HStack {
+                                        ForEach(parsedVerses.indices, id: \.self) {index in
+                                            ReferencePill(reference: parsedVerses[index].toString())
+                                        }
+                                    }
+                                }
+                            }
+                        }.onAppear {
+                            self.parsedVerses = RefParser.parseReferences(entry.references).map({$0.toString()})
                         }
                     }
                 }

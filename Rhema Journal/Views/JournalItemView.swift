@@ -17,7 +17,7 @@ struct JournalItemView<Content: View, S: ShapeStyle>: View {
             VStack {
                 label
                     .font(Design.cardViewingFont)
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.leading)
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
                     .padding();

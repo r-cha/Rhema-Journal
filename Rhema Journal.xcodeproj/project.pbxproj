@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7901C0A92AFE962F00442756 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901C0A82AFE962F00442756 /* SettingsView.swift */; };
 		7965BEAE2AFAFB9500062BEB /* BibleKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7965BEAD2AFAFB9500062BEB /* BibleKit */; };
 		7965BEB02AFAFFF300062BEB /* ReferencePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7965BEAF2AFAFFF300062BEB /* ReferencePicker.swift */; };
 		7965BEB22AFB006D00062BEB /* BibleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7965BEB12AFB006D00062BEB /* BibleData.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7901C0A82AFE962F00442756 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7965BEAF2AFAFFF300062BEB /* ReferencePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencePicker.swift; sourceTree = "<group>"; };
 		7965BEB12AFB006D00062BEB /* BibleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleData.swift; sourceTree = "<group>"; };
 		79788F892AFBD30A00F9F760 /* ReferencePill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencePill.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				79AEAABA2AF9B803003AC969 /* ResponseView.swift */,
 				7965BEAF2AFAFFF300062BEB /* ReferencePicker.swift */,
 				79788F892AFBD30A00F9F760 /* ReferencePill.swift */,
+				7901C0A82AFE962F00442756 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				79C723D12AF8422B008F3783 /* Rhema_JournalApp.swift in Sources */,
 				798278882AF9876000955B61 /* Style.swift in Sources */,
 				7982788A2AF987A600955B61 /* Response.swift in Sources */,
+				7901C0A92AFE962F00442756 /* SettingsView.swift in Sources */,
 				79AEAAB92AF9B031003AC969 /* PreviewJournal.swift in Sources */,
 				79AEAAAC2AF9AC7F003AC969 /* JournalView.swift in Sources */,
 				7965BEB22AFB006D00062BEB /* BibleData.swift in Sources */,
@@ -515,6 +519,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -547,6 +552,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (

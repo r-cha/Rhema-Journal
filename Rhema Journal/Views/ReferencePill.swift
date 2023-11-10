@@ -17,9 +17,13 @@ struct ReferencePill: View {
         Text(reference)
             .fontWeight(.light)
             .padding([.leading, .trailing], 4)
-            .background(Capsule().fill(Color.green.opacity(colorScheme == .light ? 0.3 : 0.7)))
+            .background(Capsule(style:.circular).fill(Color.green.opacity(colorScheme == .light ? 0.3 : 0.7)))
+            .overlay(
+                Capsule(style:.circular)
+                    .stroke(Color.green, lineWidth: 1) // Define the border color and width
+            )
             .multilineTextAlignment(.center)
-            .font(.title3)
+            .font(.callout)
     }
 }
 

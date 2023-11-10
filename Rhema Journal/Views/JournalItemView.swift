@@ -14,17 +14,16 @@ struct JournalItemView<Content: View, S: ShapeStyle>: View {
 
     var body: some View {
         Button(action: action) {
-            VStack {
+            VStack(alignment: .leading) {
                 label
-                    .font(Design.cardViewingFont)
+                    .font(.title2)
                     .multilineTextAlignment(.leading)
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
-                    .padding();
+                    .padding(.bottom, 8);
             }
         }
         .backgroundStyle(backgroundStyle)
-        .buttonStyle(Design.galleryButtonStyle)
-        .padding(Design.galleryItemPadding)
+        .buttonStyle(.plain)
     }
 }

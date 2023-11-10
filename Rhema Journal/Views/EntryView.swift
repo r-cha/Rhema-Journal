@@ -17,6 +17,10 @@ struct EntryView: View {
         self.entry = entry
         UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).adjustsFontSizeToFitWidth = true
     }
+    
+    private func deletePromptResponse(at offsets: IndexSet) {
+        entry.promptResponses.remove(atOffsets: offsets)
+    }
 
     var body: some View {
         VStack {
@@ -38,9 +42,15 @@ struct EntryView: View {
                 }
 
                 Section {
-                    ForEach(entry.promptResponses.indices, id: \.self) { index in
-                        ResponseView(promptResponse: entry.promptResponses[index])
+                    ForEach(entry.promptResponses.sorted {
+                        Int($0.order ?? Int.max) < Int($1.order ?? Int.max)
+                    }, id: \.self) { response in
+                        ResponseView(promptResponse: response).padding([.top], 5)
                     }
+                    .onDelete(perform: deletePromptResponse)
+                    // TODO: onMove to reorder responses
+                    // TODO: add prompts
+                    // TODO: Just get the order right to begin with
                 } header: {
                     Text("Responses")
                 }

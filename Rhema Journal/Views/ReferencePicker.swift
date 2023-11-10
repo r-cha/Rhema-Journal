@@ -24,7 +24,7 @@ struct BibleVersePicker: View {
                 
                 // Create a new work item that will fire after a delay
                 let workItem = DispatchWorkItem {
-                    // Perform the heavy task on a background thread
+                    // Perform the validation task
                     let verses = self.validateBibleVerses(verse: newValue)
                     
                     // Dispatch back to the main queue to update the UI
@@ -35,8 +35,8 @@ struct BibleVersePicker: View {
                 // Save the new work item
                 debounceWorkItem = workItem
                 
-                // Schedule the work item to run after a delay on a background queue
-                DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 1, execute: workItem)
+                // Schedule the work item to run after a delay
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: workItem)
             }
             .autocapitalization(.words)
             .disableAutocorrection(true)

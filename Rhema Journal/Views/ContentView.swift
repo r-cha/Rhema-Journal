@@ -16,6 +16,7 @@ struct ContentView: View {
     ) private var entries: [Entry]
     @State private var navigationPath: [Entry] = []
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         NavigationStack(path: $navigationPath) {
@@ -28,7 +29,16 @@ struct ContentView: View {
                 withAnimation { navigationPath.append(newEntry) }
             }
             .padding()
-            .navigationTitle("Rhema Journal")
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Text("Rhema Journal").font(.largeTitle)
+                }
+                ToolbarItem(placement: .topBarTrailing){
+                    NavigationLink(destination: SettingsView()) {
+                        Image(systemName: "gear")
+                    }
+                }
+            }
         }
     }
 }

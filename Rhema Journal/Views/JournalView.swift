@@ -16,31 +16,33 @@ struct JournalView: View {
     let addEntry: () -> Void
     
     @State private var parsedVerses: [String] = []
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
 
     var body: some View {
         ScrollView {
-            LazyVGrid(
-                columns: [GridItem(Design.galleryGridSize)],
+            LazyVStack(
+                alignment: .leading,
                 spacing: 10
             ) {
                 // Check if most recent entry is from today
                 if entries.isEmpty || !Calendar.current.isDateInToday(entries.first?.timestamp ?? Date.distantPast) {
                     // Button to add an entry for today
-                    JournalItemView(backgroundStyle: .fill.tertiary, action: addEntry) {
-                        LabeledContent("Add Entry") {
+                    JournalItemView(backgroundStyle: Color.rhemaDark, action: addEntry) {
+                        HStack {
                             Image(systemName: "plus")
+                                .shadow(color: colorScheme == .light ? .black : .white, radius: 2)
+                            Text("Today")
                         }
-                        .labelsHidden()
                     }
-                    .shadow(radius: 2)
+                    Divider()
                 }
 
                 // List all past entries
                 ForEach(entries) { entry in
-                    JournalItemView(backgroundStyle: Color.cardFront) {
+                    JournalItemView(backgroundStyle: Color.rhemaDark) {
                         selectEntry(entry)
                     } label: {
-                        VStack {
+                        VStack(alignment: .leading) {
                             Text(entry.title())
                             if let parsedVerses = Optional(RefParser.parseReferences(entry.references)) {
                                 if parsedVerses.count > 0 {
@@ -55,10 +57,11 @@ struct JournalView: View {
                             self.parsedVerses = RefParser.parseReferences(entry.references).map({$0.toString()})
                         }
                     }
+                    Divider()
                 }
             }
         }
-        .scrollClipDisabled()
+        //.scrollClipDisabled()
         .navigationDestination(for: Entry.self) { selectedEntry in
             EntryView(entry: selectedEntry)
         }

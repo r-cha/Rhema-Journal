@@ -29,7 +29,6 @@
 		79C723E42AF8422C008F3783 /* Rhema_JournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723E32AF8422C008F3783 /* Rhema_JournalTests.swift */; };
 		79C723EE2AF8422C008F3783 /* Rhema_JournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723ED2AF8422C008F3783 /* Rhema_JournalUITests.swift */; };
 		79C723F02AF8422C008F3783 /* Rhema_JournalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723EF2AF8422C008F3783 /* Rhema_JournalUITestsLaunchTests.swift */; };
-		79FB9DF72B044A260040A2EF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79FB9DF62B044A260040A2EF /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +73,7 @@
 		79C723E92AF8422C008F3783 /* Rhema JournalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rhema JournalUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C723ED2AF8422C008F3783 /* Rhema_JournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rhema_JournalUITests.swift; sourceTree = "<group>"; };
 		79C723EF2AF8422C008F3783 /* Rhema_JournalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rhema_JournalUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		79FB9DF62B044A260040A2EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79FB9DF82B044E0F0040A2EF /* Rhema-Journal-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Rhema-Journal-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,13 +161,13 @@
 		79C723CF2AF8422B008F3783 /* Rhema Journal */ = {
 			isa = PBXGroup;
 			children = (
-				79AEAAAD2AF9ACCD003AC969 /* Support */,
+				79FB9DF82B044E0F0040A2EF /* Rhema-Journal-Info.plist */,
 				79C723D02AF8422B008F3783 /* Rhema_JournalApp.swift */,
 				798278862AF986CC00955B61 /* Views */,
 				798278852AF9869D00955B61 /* Models */,
+				79AEAAAD2AF9ACCD003AC969 /* Support */,
 				79C723D62AF8422C008F3783 /* Assets.xcassets */,
 				79C723D82AF8422C008F3783 /* Preview Content */,
-				79FB9DF62B044A260040A2EF /* Info.plist */,
 			);
 			path = "Rhema Journal";
 			sourceTree = "<group>";
@@ -310,7 +309,6 @@
 			files = (
 				79C723DA2AF8422C008F3783 /* Preview Assets.xcassets in Resources */,
 				79C723D72AF8422C008F3783 /* Assets.xcassets in Resources */,
-				79FB9DF72B044A260040A2EF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +516,7 @@
 				DEVELOPMENT_TEAM = CLWAHA5TVR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Rhema-Journal-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Rhema Journal";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -551,6 +550,7 @@
 				DEVELOPMENT_TEAM = CLWAHA5TVR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Rhema-Journal-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Rhema Journal";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

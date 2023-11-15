@@ -29,6 +29,7 @@
 		79C723E42AF8422C008F3783 /* Rhema_JournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723E32AF8422C008F3783 /* Rhema_JournalTests.swift */; };
 		79C723EE2AF8422C008F3783 /* Rhema_JournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723ED2AF8422C008F3783 /* Rhema_JournalUITests.swift */; };
 		79C723F02AF8422C008F3783 /* Rhema_JournalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723EF2AF8422C008F3783 /* Rhema_JournalUITestsLaunchTests.swift */; };
+		79FB9DF72B044A260040A2EF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79FB9DF62B044A260040A2EF /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		79C723E92AF8422C008F3783 /* Rhema JournalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rhema JournalUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C723ED2AF8422C008F3783 /* Rhema_JournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rhema_JournalUITests.swift; sourceTree = "<group>"; };
 		79C723EF2AF8422C008F3783 /* Rhema_JournalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rhema_JournalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		79FB9DF62B044A260040A2EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				798278852AF9869D00955B61 /* Models */,
 				79C723D62AF8422C008F3783 /* Assets.xcassets */,
 				79C723D82AF8422C008F3783 /* Preview Content */,
+				79FB9DF62B044A260040A2EF /* Info.plist */,
 			);
 			path = "Rhema Journal";
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			files = (
 				79C723DA2AF8422C008F3783 /* Preview Assets.xcassets in Resources */,
 				79C723D72AF8422C008F3783 /* Assets.xcassets in Resources */,
+				79FB9DF72B044A260040A2EF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

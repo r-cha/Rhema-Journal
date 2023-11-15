@@ -10,9 +10,33 @@ import SwiftUI
 import SwiftData
 
 struct SettingsView: View {
+    private var _userDefaults: UserDefaults
+    @State private var style: Style
+    
+    init() {
+        self._userDefaults = UserDefaults()
+        self.style = Style(rawValue: _userDefaults.string(forKey: "JournalPreference") ?? Style.lectio.rawValue)!
+    }
+    
     var body: some View {
         Form {
-            Text("This is where preferences go")
-        }.navigationTitle("Preferences")
+            Section {
+                Text("Select the journal style for new entries to your journal. Changing this settings does not affect previous entries.").font(.body)
+                Picker("Journal Type", selection: $style) {
+                    ForEach(Style.allCases, id: \.self) { type in
+                        Text(type.rawValue)
+                    }
+                }.onChange(of: style) {
+                    _userDefaults.setValue(style.rawValue, forKey: "JournalPreference")
+                }
+            }
+            //Section {
+            //    Text("Export your entire journal as a .zip of .txt files.").font(.body)
+            //    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            //        Text("Export")
+            //    })
+            //}
+        }
+        .navigationTitle("Preferences")
     }
 }

@@ -17,6 +17,8 @@ struct ContentView: View {
     @State private var navigationPath: [Entry] = []
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
+    
+    private var _userDefaults: UserDefaults = UserDefaults()
 
     var body: some View {
         NavigationStack(path: $navigationPath) {
@@ -24,7 +26,11 @@ struct ContentView: View {
                 withAnimation { navigationPath.append(entry) }
             } addEntry: {
                 // TODO: Start w yesterday's chapter + 1
-                let newEntry = Entry(style: Style.lectio, promptResponses: init_prompts(style: Style.lectio))
+                let newEntry = Entry(
+                    style: Style.lectio,
+                    promptResponses: init_prompts(
+                        style: Style(rawValue: _userDefaults.string(forKey: "JournalPreference") ?? Style.lectio.rawValue)!
+                    ))
                 modelContext.insert(newEntry)
                 withAnimation { navigationPath.append(newEntry) }
             }

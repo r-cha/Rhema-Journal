@@ -17,28 +17,12 @@ struct EntryView: View {
         self.entry = entry
         UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).adjustsFontSizeToFitWidth = true
     }
-    
-    private func deletePromptResponse(at offsets: IndexSet) {
-        entry.promptResponses.remove(atOffsets: offsets)
-    }
 
     var body: some View {
         VStack {
             Form {
                 Section {
-                    Picker("Type", selection: $entry.style) {
-                        ForEach(Style.allCases, id: \.self) { type in
-                            Text(type.rawValue)
-                        }
-                    }
-                    .onChange(of: entry.style) { old, newValue in
-                        entry.promptResponses = init_prompts(style: newValue)
-                    }
-
                     BibleVersePicker(references: $entry.references)
-
-                } header: {
-                    Text("Settings")
                 }
 
                 Section {
@@ -47,15 +31,21 @@ struct EntryView: View {
                     }, id: \.self) { response in
                         ResponseView(promptResponse: response).padding([.top], 5)
                     }
-                    .onDelete(perform: deletePromptResponse)
-                    // TODO: onMove to reorder responses
-                    // TODO: add prompts
-                    // TODO: Just get the order right to begin with
                 } header: {
                     Text("Responses")
                 }
             }
-            .navigationBarTitle(entry.title())
+            .navigationTitle(entry.title())
+            //.toolbar {
+            //    ToolbarItem(placement: .topBarLeading) {
+            //        Text(entry.title())
+            //    }
+            //    ToolbarItem(placement: .topBarTrailing){
+            //        NavigationLink(destination: SettingsView()) {
+            //            Image(systemName: "heart")
+            //        }
+            //    }
+            //}
         }
     }
 }

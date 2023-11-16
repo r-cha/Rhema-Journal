@@ -29,6 +29,13 @@ struct SettingsView: View {
                 }.onChange(of: style) {
                     _userDefaults.setValue(style.rawValue, forKey: "JournalPreference")
                 }
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Prompts")
+                        .font(.headline)
+                    ForEach(StylePrompts[style] ?? [], id: \.self) { prompt in
+                        Text(prompt)
+                    }
+                }
             }
             //Section {
             //    Text("Export your entire journal as a .zip of .txt files.").font(.body)

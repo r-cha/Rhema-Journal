@@ -15,22 +15,29 @@ enum Style: String, CaseIterable {
     case none = "None"
 }
 
+
+let StylePrompts = [
+    Style.lectio: [
+        "Read: What words or phrases seem to jump out at you?",
+        "Reflect: What is God saying?",
+        "Respond: What is the right response in my life to this passage?",
+        "Rest: Sit quietly and allow God to work. When your mind wanders, recenter on the truth from Scripture.",
+    ],
+    Style.dbs: [
+        "What does this passage tell me about God?",
+        "What does this story tell me about people?",
+        "What is the right response in my life to this passage?",
+    ],
+    Style.none: [
+        "Notes",
+    ],
+]
+
+
 func init_prompts(style: Style) -> [PromptResponse] {
-    switch style {
-    case .lectio:
-        return [
-            PromptResponse(prompt: "Read: What words or phrases seem to jump out at you?", order: 0),
-            PromptResponse(prompt: "Reflect: What is God saying?", order: 1),
-            PromptResponse(prompt: "Respond: What is the right response in my life to this passage?", order: 2),
-            PromptResponse(prompt: "Rest: Sit quietly and allow God to work. When your mind wanders, recenter on the truth from Scripture.", order: 3)
-        ]
-    case .dbs:
-        return [
-            PromptResponse(prompt: "What does this passage tell me about God?", order: 0),
-            PromptResponse(prompt: "What does this story tell me about people?", order: 1),
-            PromptResponse(prompt: "What is the right response in my life to this passage?", order: 2)
-        ]
-    case .none:
-        return [PromptResponse(prompt: "Notes", order: 0)]
+    var response: [PromptResponse] = []
+    for (i, prompt) in StylePrompts[style]!.enumerated() {
+        response.append(PromptResponse(prompt: prompt, order: i))
     }
+    return response
 }

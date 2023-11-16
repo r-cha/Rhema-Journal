@@ -14,31 +14,33 @@ struct JournalView: View {
     var entries: [Entry]
     let selectEntry: (Entry) -> Void
     let addEntry: () -> Void
+    let deleteEntry: (IndexSet) -> Void
     
     @State private var parsedVerses: [String] = []
     @Environment(\.colorScheme) var colorScheme: ColorScheme
 
     var body: some View {
-        ScrollView {
-            LazyVStack(
-                alignment: .leading,
-                spacing: 10
-            ) {
-                // Check if most recent entry is from today
-                if entries.isEmpty || !Calendar.current.isDateInToday(entries.first?.timestamp ?? Date.distantPast) {
-                    // Button to add an entry for today
-                    JournalItemView(backgroundStyle: Color.rhemaDark, action: addEntry) {
-                        HStack {
-                            Image(systemName: "plus")
-                                .shadow(color: colorScheme == .light ? .black : .white, radius: 2)
-                            Text("Today")
-                        }
+        List {
+            // Check if most recent entry is from today
+            if entries.isEmpty || !Calendar.current.isDateInToday(entries.first?.timestamp ?? Date.distantPast) {
+                // Button to add an entry for today
+                JournalItemView(
+                    backgroundStyle: Color.rhemaDark,
+                    action: addEntry
+                ) {
+                    HStack {
+                        Image(systemName: "plus")
+                        Text("Today")
                     }
-                    Divider()
                 }
+                .shadow(color: colorScheme == .light ? .rhemaDark : .rhema, radius: 2)
+                .listRowInsets(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
+                .listRowSeparator(.hidden)
+            }
 
-                // List all past entries
-                ForEach(entries) { entry in
+            // List all past entries
+            ForEach(entries) { entry in
+                Group {
                     JournalItemView(backgroundStyle: Color.rhemaDark) {
                         selectEntry(entry)
                     } label: {
@@ -57,11 +59,12 @@ struct JournalView: View {
                             self.parsedVerses = RefParser.parseReferences(entry.references).map({$0.toString()})
                         }
                     }
-                    Divider()
                 }
+                .listRowInsets(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
             }
+            .onDelete(perform: deleteEntry)
         }
-        //.scrollClipDisabled()
+        .listStyle(.plain)
         .navigationDestination(for: Entry.self) { selectedEntry in
             EntryView(entry: selectedEntry)
         }

@@ -25,7 +25,6 @@ struct ContentView: View {
             JournalView(entries: entries) { entry in
                 withAnimation { navigationPath.append(entry) }
             } addEntry: {
-                // TODO: Start w yesterday's chapter + 1
                 let newEntry = Entry(
                     style: Style.lectio,
                     promptResponses: init_prompts(
@@ -33,11 +32,17 @@ struct ContentView: View {
                     ))
                 modelContext.insert(newEntry)
                 withAnimation { navigationPath.append(newEntry) }
+            } deleteEntry: { offsets in
+                offsets.forEach { index in
+                    let entry = entries[index]
+                    modelContext.delete(entry)
+                }
+                try? modelContext.save()
             }
             .padding()
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Text("Rhema Journal").font(.largeTitle)
+                    Text("Rhema Journal").font(.largeTitle).fontDesign(.serif)
                 }
                 ToolbarItem(placement: .topBarTrailing){
                     NavigationLink(destination: SettingsView()) {

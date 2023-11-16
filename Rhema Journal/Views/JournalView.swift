@@ -18,11 +18,12 @@ struct JournalView: View {
     
     @State private var parsedVerses: [String] = []
     @Environment(\.colorScheme) var colorScheme: ColorScheme
+    @State private var needsToday: Bool = false
 
     var body: some View {
         List {
             // Check if most recent entry is from today
-            if entries.isEmpty || !Calendar.current.isDateInToday(entries.first?.timestamp ?? Date.distantPast) {
+            if needsToday {
                 // Button to add an entry for today
                 JournalItemView(
                     backgroundStyle: Color.rhemaDark,
@@ -67,6 +68,10 @@ struct JournalView: View {
         .listStyle(.plain)
         .navigationDestination(for: Entry.self) { selectedEntry in
             EntryView(entry: selectedEntry)
+        }
+        .onAppear {
+            // Update the condition whenever the view appears
+            needsToday = entries.isEmpty || !Calendar.current.isDateInToday(entries.first?.timestamp ?? Date.distantPast)
         }
     }
 }

@@ -13,6 +13,6 @@ enum Design {
 }
 
 extension Color {
-    static let rhema = Color(red:255, green:246, blue:211)
-    static let rhemaDark = Color(red: 63, green: 63, blue: 63)
+    static let rhema = Color(red:255/255, green:246/255, blue:211/255)
+    static let rhemaDark = Color(red: 63/255, green: 63/255, blue: 63/255)
 }

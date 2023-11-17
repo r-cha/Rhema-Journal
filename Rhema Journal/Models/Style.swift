@@ -12,25 +12,52 @@ import SwiftData
 enum Style: String, CaseIterable {
     case lectio = "Lectio Divina"
     case dbs = "Discovery Bible Study"
+    case twi = "TWI"
+    case soap = "SOAP"
+    case hear = "HEAR"
     case none = "None"
 }
 
+
+let StylePrompts = [
+    Style.lectio: [
+        "Read: What words or phrases seem to jump out at you?",
+        "Reflect: What is God saying?",
+        "Respond: What is the right response in my life to this passage?",
+        "Rest: Sit quietly and allow God to work. When your mind wanders, recenter on the truth from Scripture.",
+    ],
+    Style.dbs: [
+        "What does this passage tell me about God?",
+        "What does this story tell me about people?",
+        "What is the right response in my life to this passage?",
+    ],
+    Style.twi: [
+        "Thanksgiving: Thank God for what He's done and who He is. Write down anything you are thankful for",
+        "Worship: Agree with who He is. Focus on a particular attribute of His character",
+        "Intercession: Agree with what He wants to do",
+    ],
+    Style.soap: [
+        "Scripture: Copy down or paraphrase the passage",
+        "Observation: What stands out to you?",
+        "Application: What is the right response in your life to this passage?",
+        "Prayer: Does this passage spur any prayer for yourself or someone else?",
+    ],
+    Style.hear: [
+        "Highlight: What words or phrases seem to jump out at you?",
+        "Explain: What does this passage mean to its original audience?",
+        "Apply: What does this passage mean today, to you?",
+        "Respond: How can you think or act differently in response to this passage?",
+    ],
+    Style.none: [
+        "Notes",
+    ],
+]
+
+
 func init_prompts(style: Style) -> [PromptResponse] {
-    switch style {
-    case .lectio:
-        return [
-            PromptResponse(prompt: "Read: What words or phrases seem to jump out at you?", order: 0),
-            PromptResponse(prompt: "Reflect: What is God saying?", order: 1),
-            PromptResponse(prompt: "Respond: What is the right response in my life to this passage?", order: 2),
-            PromptResponse(prompt: "Rest: Sit quietly and allow God to work. When your mind wanders, recenter on the truth from Scripture.", order: 3)
-        ]
-    case .dbs:
-        return [
-            PromptResponse(prompt: "What does this passage tell me about God?", order: 0),
-            PromptResponse(prompt: "What does this story tell me about people?", order: 1),
-            PromptResponse(prompt: "What is the right response in my life to this passage?", order: 2)
-        ]
-    case .none:
-        return [PromptResponse(prompt: "Notes", order: 0)]
+    var response: [PromptResponse] = []
+    for (i, prompt) in StylePrompts[style]!.enumerated() {
+        response.append(PromptResponse(prompt: prompt, order: i))
     }
+    return response
 }

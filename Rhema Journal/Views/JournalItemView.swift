@@ -24,6 +24,5 @@ struct JournalItemView<Content: View, S: ShapeStyle>: View {
             }
         }
         .backgroundStyle(backgroundStyle)
-        .buttonStyle(.plain)
     }
 }

@@ -25,6 +25,12 @@ struct ReferencePill: View {
             )
             .multilineTextAlignment(.center)
             .font(font)
+            .shadow(
+                color: .black.opacity(0.2),
+                radius: 2,
+                x:0,
+                y:2
+            )
     }
 }
 

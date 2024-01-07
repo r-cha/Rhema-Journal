@@ -46,7 +46,7 @@ struct ContentView: View {
                     Text("Rhema Journal")
                         .font(.largeTitle)
                         .fontDesign(.serif)
-                        .foregroundStyle(Color.FG)
+                        .foregroundStyle(Color.FG.gradient)
                 }
                 ToolbarItem(placement: .topBarTrailing){
                     NavigationLink(destination: SettingsView()) {
@@ -70,6 +70,7 @@ struct ContentView: View {
 //                )
             )
             .scrollContentBackground(.hidden)
+            .scrollClipDisabled()
         }
     }
 }

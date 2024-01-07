@@ -31,15 +31,18 @@ struct EntryView: View {
                 cornerRadius: 8, style: .continuous
             ))
             
-            Section {
+            VStack {
                 ForEach(entry.promptResponses.sorted {
                     Int($0.order ?? Int.max) < Int($1.order ?? Int.max)
                 }, id: \.self) { response in
-                    ResponseView(promptResponse: response).padding([.top], 5)
+                    ResponseView(promptResponse: response).padding().background(.ultraThinMaterial, in: RoundedRectangle(
+                        cornerRadius: 8, style: .continuous
+                    ))
                 }
-            } header: {
-                Text("Responses")
-            }
+            } //header: {
+//                Text("Responses")
+//            }
+            .listRowBackground(Color.clear)
         }
         .navigationTitle(entry.title())
         .background(

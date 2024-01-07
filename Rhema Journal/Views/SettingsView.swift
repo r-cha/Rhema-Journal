@@ -21,22 +21,32 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section {
-                Text("Select the journal style for new entries to your journal. Changing this settings does not affect previous entries.").font(.body)
-                Picker("Journal Type", selection: $style) {
-                    ForEach(Style.allCases, id: \.self) { type in
-                        Text(type.rawValue)
+                VStack {
+                    Text("Select the journal style for new entries to your journal. Changing this settings does not affect previous entries.").font(.body)
+                    Divider()
+                    Picker("Journal Type", selection: $style) {
+                        ForEach(Style.allCases, id: \.self) { type in
+                            Text(type.rawValue)
+                        }
+                    }.onChange(of: style) {
+                        _userDefaults.setValue(style.rawValue, forKey: "JournalPreference")
                     }
-                }.onChange(of: style) {
-                    _userDefaults.setValue(style.rawValue, forKey: "JournalPreference")
-                }
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("Prompts")
-                        .font(.headline)
-                    ForEach(StylePrompts[style] ?? [], id: \.self) { prompt in
-                        Text(prompt)
+                    Divider()
+                    VStack(alignment: .leading, spacing: 10) {
+                        HStack {Spacer()}
+                        Text("Prompts")
+                            .font(.headline)
+                        ForEach(StylePrompts[style] ?? [], id: \.self) { prompt in
+                            Text(prompt)
+                        }
                     }
                 }
+                .padding()
+                .background(.ultraThinMaterial, in: RoundedRectangle(
+                    cornerRadius: 8, style: .continuous
+                ))
             }
+            .listRowBackground(Color.clear)
         }
         .navigationTitle("Preferences")
         .background(

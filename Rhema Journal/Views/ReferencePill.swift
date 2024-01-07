@@ -12,18 +12,19 @@ import BibleKit
 struct ReferencePill: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     var reference: String
-
+    var font: Font = .caption
+    
     var body: some View {
         Text(reference)
             .fontWeight(.light)
             .padding([.leading, .trailing], 4)
-            .background(Capsule(style:.circular).fill(Color.green.opacity(colorScheme == .light ? 0.3 : 0.7)))
+            .background(Capsule(style:.circular).fill(.thinMaterial))
             .overlay(
                 Capsule(style:.circular)
-                    .stroke(Color.green, lineWidth: 1) // Define the border color and width
+                    .stroke(.ultraThickMaterial, lineWidth: 1) // Define the border color and width
             )
             .multilineTextAlignment(.center)
-            .font(.callout)
+            .font(font)
     }
 }
 

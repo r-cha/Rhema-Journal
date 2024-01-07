@@ -15,13 +15,14 @@ struct JournalView: View {
     let selectEntry: (Entry) -> Void
     let addEntry: () -> Void
     let deleteEntry: (IndexSet) -> Void
-
+    
     @State private var parsedVerses: [String] = []
     @State private var needsToday: Bool = false
-
+    
     var body: some View {
         ScrollView(.vertical) {
             if needsToday {
+                HStack {Spacer()}
                 CardView(action: addEntry) {
                     HStack {
                         Image(systemName: "plus")
@@ -32,7 +33,7 @@ struct JournalView: View {
                 }
                 Divider().foregroundStyle(Color.black)
             }
-
+            
             VStack(alignment: .leading, spacing: 10) {
                 HStack {Spacer()}
                 ForEach(entries) {entry in
@@ -44,7 +45,6 @@ struct JournalView: View {
                     .background(.clear)
                 }
                 .onDelete(perform: deleteEntry)
-                .listStyle(.plain)
                 .navigationDestination(for: Entry.self) { selectedEntry in
                     EntryView(entry: selectedEntry)
                 }

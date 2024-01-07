@@ -15,10 +15,10 @@ struct JournalView: View {
     let selectEntry: (Entry) -> Void
     let addEntry: () -> Void
     let deleteEntry: (IndexSet) -> Void
-    
+
     @State private var parsedVerses: [String] = []
     @State private var needsToday: Bool = false
-    
+
     var body: some View {
         ScrollView(.vertical) {
             if needsToday {
@@ -32,7 +32,7 @@ struct JournalView: View {
                 }
                 Divider().foregroundStyle(Color.black)
             }
-            
+
             VStack(alignment: .leading, spacing: 10) {
                 HStack {Spacer()}
                 ForEach(entries) {entry in

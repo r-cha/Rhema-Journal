@@ -16,7 +16,7 @@
 		7982788A2AF987A600955B61 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798278892AF987A600955B61 /* Response.swift */; };
 		79AEAAAC2AF9AC7F003AC969 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAAB2AF9AC7F003AC969 /* JournalView.swift */; };
 		79AEAAAF2AF9ACF6003AC969 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAAE2AF9ACF6003AC969 /* Design.swift */; };
-		79AEAAB12AF9ADC7003AC969 /* JournalItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAB02AF9ADC7003AC969 /* JournalItemView.swift */; };
+		79AEAAB12AF9ADC7003AC969 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAB02AF9ADC7003AC969 /* CardView.swift */; };
 		79AEAAB32AF9AE88003AC969 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAB22AF9AE88003AC969 /* EntryView.swift */; };
 		79AEAAB72AF9AFEF003AC969 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAB62AF9AFEF003AC969 /* PreviewData.swift */; };
 		79AEAAB92AF9B031003AC969 /* PreviewJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAB82AF9B031003AC969 /* PreviewJournal.swift */; };
@@ -26,9 +26,6 @@
 		79C723D52AF8422B008F3783 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723D42AF8422B008F3783 /* Entry.swift */; };
 		79C723D72AF8422C008F3783 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C723D62AF8422C008F3783 /* Assets.xcassets */; };
 		79C723DA2AF8422C008F3783 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C723D92AF8422C008F3783 /* Preview Assets.xcassets */; };
-		79C723E42AF8422C008F3783 /* Rhema_JournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723E32AF8422C008F3783 /* Rhema_JournalTests.swift */; };
-		79C723EE2AF8422C008F3783 /* Rhema_JournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723ED2AF8422C008F3783 /* Rhema_JournalUITests.swift */; };
-		79C723F02AF8422C008F3783 /* Rhema_JournalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C723EF2AF8422C008F3783 /* Rhema_JournalUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +54,7 @@
 		798278892AF987A600955B61 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		79AEAAAB2AF9AC7F003AC969 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		79AEAAAE2AF9ACF6003AC969 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
-		79AEAAB02AF9ADC7003AC969 /* JournalItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalItemView.swift; sourceTree = "<group>"; };
+		79AEAAB02AF9ADC7003AC969 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		79AEAAB22AF9AE88003AC969 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		79AEAAB62AF9AFEF003AC969 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		79AEAAB82AF9B031003AC969 /* PreviewJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewJournal.swift; sourceTree = "<group>"; };
@@ -69,10 +66,7 @@
 		79C723D62AF8422C008F3783 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79C723D92AF8422C008F3783 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		79C723DF2AF8422C008F3783 /* Rhema JournalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rhema JournalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		79C723E32AF8422C008F3783 /* Rhema_JournalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rhema_JournalTests.swift; sourceTree = "<group>"; };
 		79C723E92AF8422C008F3783 /* Rhema JournalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rhema JournalUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		79C723ED2AF8422C008F3783 /* Rhema_JournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rhema_JournalUITests.swift; sourceTree = "<group>"; };
-		79C723EF2AF8422C008F3783 /* Rhema_JournalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rhema_JournalUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		79FB9DF82B044E0F0040A2EF /* Rhema-Journal-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Rhema-Journal-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -119,7 +113,7 @@
 			children = (
 				79C723D22AF8422B008F3783 /* ContentView.swift */,
 				79AEAAAB2AF9AC7F003AC969 /* JournalView.swift */,
-				79AEAAB02AF9ADC7003AC969 /* JournalItemView.swift */,
+				79AEAAB02AF9ADC7003AC969 /* CardView.swift */,
 				79AEAAB22AF9AE88003AC969 /* EntryView.swift */,
 				79AEAABA2AF9B803003AC969 /* ResponseView.swift */,
 				7965BEAF2AFAFFF300062BEB /* ReferencePicker.swift */,
@@ -142,8 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				79C723CF2AF8422B008F3783 /* Rhema Journal */,
-				79C723E22AF8422C008F3783 /* Rhema JournalTests */,
-				79C723EC2AF8422C008F3783 /* Rhema JournalUITests */,
 				79C723CE2AF8422B008F3783 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -178,23 +170,6 @@
 				79C723D92AF8422C008F3783 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		79C723E22AF8422C008F3783 /* Rhema JournalTests */ = {
-			isa = PBXGroup;
-			children = (
-				79C723E32AF8422C008F3783 /* Rhema_JournalTests.swift */,
-			);
-			path = "Rhema JournalTests";
-			sourceTree = "<group>";
-		};
-		79C723EC2AF8422C008F3783 /* Rhema JournalUITests */ = {
-			isa = PBXGroup;
-			children = (
-				79C723ED2AF8422C008F3783 /* Rhema_JournalUITests.swift */,
-				79C723EF2AF8422C008F3783 /* Rhema_JournalUITestsLaunchTests.swift */,
-			);
-			path = "Rhema JournalUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,7 +321,7 @@
 				79AEAAB92AF9B031003AC969 /* PreviewJournal.swift in Sources */,
 				79AEAAAC2AF9AC7F003AC969 /* JournalView.swift in Sources */,
 				7965BEB22AFB006D00062BEB /* BibleData.swift in Sources */,
-				79AEAAB12AF9ADC7003AC969 /* JournalItemView.swift in Sources */,
+				79AEAAB12AF9ADC7003AC969 /* CardView.swift in Sources */,
 				79AEAAB32AF9AE88003AC969 /* EntryView.swift in Sources */,
 				79AEAABB2AF9B803003AC969 /* ResponseView.swift in Sources */,
 			);
@@ -356,7 +331,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79C723E42AF8422C008F3783 /* Rhema_JournalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,8 +338,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79C723F02AF8422C008F3783 /* Rhema_JournalUITestsLaunchTests.swift in Sources */,
-				79C723EE2AF8422C008F3783 /* Rhema_JournalUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

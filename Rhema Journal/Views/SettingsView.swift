@@ -37,13 +37,15 @@ struct SettingsView: View {
                     }
                 }
             }
-            //Section {
-            //    Text("Export your entire journal as a .zip of .txt files.").font(.body)
-            //    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-            //        Text("Export")
-            //    })
-            //}
         }
         .navigationTitle("Preferences")
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color.sunlight, Color.bluesky]),
+                startPoint: .top, endPoint: .bottom
+            )
+            .edgesIgnoringSafeArea(.vertical)
+        )
+        .scrollContentBackground(.hidden)
     }
 }

@@ -1,9 +1,9 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-The main view that contains the majority of the app's content.
-*/
+ See the LICENSE.txt file for this sample’s licensing information.
+ 
+ Abstract:
+ The main view that contains the majority of the app's content.
+ */
 
 import SwiftUI
 import SwiftData
@@ -16,10 +16,9 @@ struct ContentView: View {
     ) private var entries: [Entry]
     @State private var navigationPath: [Entry] = []
     @Environment(\.modelContext) private var modelContext
-    @Environment(\.colorScheme) private var colorScheme
     
     private var _userDefaults: UserDefaults = UserDefaults()
-
+    
     var body: some View {
         NavigationStack(path: $navigationPath) {
             JournalView(entries: entries) { entry in
@@ -39,10 +38,12 @@ struct ContentView: View {
                 }
                 try? modelContext.save()
             }
-            .padding()
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Text("Rhema Journal").font(.largeTitle).fontDesign(.serif)
+                    Text("Rhema Journal")
+                        .font(.largeTitle)
+                        .fontDesign(.serif)
+                        .foregroundStyle(Color.FG)
                 }
                 ToolbarItem(placement: .topBarTrailing){
                     NavigationLink(destination: SettingsView()) {
@@ -50,6 +51,14 @@ struct ContentView: View {
                     }
                 }
             }
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: [Color.sunlight, Color.bluesky]),
+                    startPoint: .top, endPoint: .bottom
+                )
+                .edgesIgnoringSafeArea(.all)
+            )
+            .scrollContentBackground(.hidden)
         }
     }
 }

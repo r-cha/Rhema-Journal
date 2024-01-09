@@ -14,9 +14,7 @@ struct JournalView: View {
     var entries: [Entry]
     let selectEntry: (Entry) -> Void
     let addEntry: () -> Void
-    let deleteEntry: (IndexSet) -> Void
     
-    @State private var parsedVerses: [String] = []
     @State private var needsToday: Bool = false
     
     var body: some View {
@@ -44,7 +42,6 @@ struct JournalView: View {
                     }
                     .background(.clear)
                 }
-                .onDelete(perform: deleteEntry)
                 .navigationDestination(for: Entry.self) { selectedEntry in
                     EntryView(entry: selectedEntry)
                 }

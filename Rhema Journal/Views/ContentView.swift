@@ -27,19 +27,13 @@ struct ContentView: View {
             JournalView(entries: entries) { entry in
                 withAnimation { navigationPath.append(entry) }
             } addEntry: {
+                let style = Style(rawValue: _userDefaults.string(forKey: "JournalPreference") ?? Style.lectio.rawValue)
                 let newEntry = Entry(
-                    style: Style.lectio,
-                    promptResponses: init_prompts(
-                        style: Style(rawValue: _userDefaults.string(forKey: "JournalPreference") ?? Style.lectio.rawValue)!
-                    ))
+                    style: style!,
+                    promptResponses: init_prompts(style: style!)
+                )
                 modelContext.insert(newEntry)
                 withAnimation { navigationPath.append(newEntry) }
-            } deleteEntry: { offsets in
-                offsets.forEach { index in
-                    let entry = entries[index]
-                    modelContext.delete(entry)
-                }
-                try? modelContext.save()
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {

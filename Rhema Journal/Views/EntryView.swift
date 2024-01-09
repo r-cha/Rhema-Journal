@@ -1,10 +1,3 @@
-/*
- See the LICENSE.txt file for this sample’s licensing information.
- 
- Abstract:
- A reusable view for content presented as a card visually.
- */
-
 import SwiftUI
 
 import BibleKit
@@ -12,8 +5,8 @@ import BibleKit
 
 struct EntryView: View {
     @Bindable var entry: Entry
-    @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) var dismiss
     
     init(entry: Entry) {
         self.entry = entry
@@ -24,24 +17,23 @@ struct EntryView: View {
         Form {
             Section {
                 BibleVersePicker(references: $entry.references)
-            } header: {
-                //Text("Scripture")
-            }.listRowBackground(Color.clear
-            ).background(.ultraThinMaterial, in: RoundedRectangle(
+            }
+            .listRowBackground(Color.clear)
+            .background(.ultraThinMaterial, in: RoundedRectangle(
                 cornerRadius: 8, style: .continuous
             ))
             
-            VStack {
+            VStack(alignment: .leading, spacing: 10) {
                 ForEach(entry.promptResponses.sorted {
                     Int($0.order ?? Int.max) < Int($1.order ?? Int.max)
                 }, id: \.self) { response in
-                    ResponseView(promptResponse: response).padding().background(.ultraThinMaterial, in: RoundedRectangle(
+                    ResponseView(promptResponse: response)
+                    .padding()
+                    .background(.ultraThinMaterial, in: RoundedRectangle(
                         cornerRadius: 8, style: .continuous
                     ))
                 }
-            } //header: {
-//                Text("Responses")
-//            }
+            }
             .listRowBackground(Color.clear)
         }
         .navigationTitle(entry.title())
@@ -53,9 +45,6 @@ struct EntryView: View {
             .edgesIgnoringSafeArea(.all)
         )
         .listRowBackground(Color.clear)
-        .background(.ultraThinMaterial, in: RoundedRectangle(
-            cornerRadius: 8, style: .continuous
-        ))
         .scrollContentBackground(.hidden)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing){

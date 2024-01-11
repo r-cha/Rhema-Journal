@@ -18,7 +18,6 @@ struct ContentView: View {
     ) private var entries: [Entry]
     @State private var navigationPath: [Entry] = []
     @Environment(\.modelContext) private var modelContext
-    @Environment(\.colorScheme) var colorScheme: ColorScheme
     
     private var _userDefaults: UserDefaults = UserDefaults()
     
@@ -54,14 +53,6 @@ struct ContentView: View {
                     startPoint: .top, endPoint: .bottom
                 )
                 .edgesIgnoringSafeArea(.all)
-//                .overlay(
-//                    Image("Grain")
-//                        .resizable(resizingMode: .stretch)
-//                        .colorInvert()
-//                        .opacity(0.2)
-//                        .blendMode(.multiply)
-//                        .scaledToFill()
-//                )
             )
             .scrollContentBackground(.hidden)
             .scrollClipDisabled()

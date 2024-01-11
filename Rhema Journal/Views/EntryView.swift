@@ -24,14 +24,8 @@ struct EntryView: View {
             ))
             
             VStack(alignment: .leading, spacing: 10) {
-                ForEach(entry.promptResponses.sorted {
-                    Int($0.order ?? Int.max) < Int($1.order ?? Int.max)
-                }, id: \.self) { response in
+                ForEach(entry.sortedResponses()) { response in
                     ResponseView(promptResponse: response)
-                    .padding()
-                    .background(.ultraThinMaterial, in: RoundedRectangle(
-                        cornerRadius: 8, style: .continuous
-                    ))
                 }
             }
             .listRowBackground(Color.clear)

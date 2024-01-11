@@ -25,5 +25,9 @@ struct ResponseView: View {
                 }
             }
         }
+        .padding()
+        .background(.ultraThinMaterial, in: RoundedRectangle(
+            cornerRadius: 8, style: .continuous
+        ))
     }
 }

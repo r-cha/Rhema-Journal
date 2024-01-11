@@ -10,19 +10,21 @@ import SwiftData
 
 
 @Model
-class PromptResponse {
-    var id = UUID()
+class PromptResponse: Identifiable {
+    var id: UUID
     var prompt: String
     var response: String
     var order: Int?
 
     init(prompt: String, order: Int? = nil) {
+        self.id = UUID()
         self.prompt = prompt
         self.response = ""
         self.order = order
     }
 
     init(prompt: String, response: String) {
+        self.id = UUID()
         self.prompt = prompt
         self.response = response
         self.order = nil

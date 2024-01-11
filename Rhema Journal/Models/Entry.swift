@@ -40,6 +40,12 @@ final class Entry {
     func title() -> String {
         return dateFormatter.string(from: self.timestamp)
     }
+    
+    func sortedResponses() -> [PromptResponse] {
+        return self.promptResponses.sorted {
+            Int($0.order ?? Int.max) < Int($1.order ?? Int.max)
+        }
+    }
 }
 
 

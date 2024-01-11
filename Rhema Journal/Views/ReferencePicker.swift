@@ -4,7 +4,7 @@
 //
 //  Created by Robert Chandler on 11/7/23.
 //
-
+import Foundation
 import SwiftUI
 
 import BibleKit

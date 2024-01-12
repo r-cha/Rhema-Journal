@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 import BibleKit
 
@@ -8,15 +9,11 @@ struct EntryView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) var dismiss
     
-    init(entry: Entry) {
-        self.entry = entry
-        UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).adjustsFontSizeToFitWidth = true
-    }
-    
     var body: some View {
+        let _ = Self._printChanges()
         Form {
             Section {
-                BibleVersePicker(references: $entry.references)
+                BibleVersePicker(entry: entry)
             }
             .listRowBackground(Color.clear)
             .background(.ultraThinMaterial, in: RoundedRectangle(
@@ -44,6 +41,7 @@ struct EntryView: View {
             ToolbarItem(placement: .topBarTrailing){
                 Button("Delete", systemImage: "trash", role: .destructive) {
                     modelContext.delete(entry)
+                    try? modelContext.save()
                     dismiss()
                 }
             }

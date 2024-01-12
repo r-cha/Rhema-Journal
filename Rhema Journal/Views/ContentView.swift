@@ -22,15 +22,13 @@ struct ContentView: View {
     private var _userDefaults: UserDefaults = UserDefaults()
     
     var body: some View {
+        let _ = Self._printChanges()
         NavigationStack(path: $navigationPath) {
             JournalView(entries: entries) { entry in
                 withAnimation { navigationPath.append(entry) }
             } addEntry: {
                 let style = Style(rawValue: _userDefaults.string(forKey: "JournalPreference") ?? Style.lectio.rawValue)
-                let newEntry = Entry(
-                    style: style!,
-                    promptResponses: init_prompts(style: style!)
-                )
+                let newEntry = Entry(style: style!)
                 modelContext.insert(newEntry)
                 withAnimation { navigationPath.append(newEntry) }
             }

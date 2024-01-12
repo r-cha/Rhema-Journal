@@ -11,18 +11,51 @@ import SwiftData
 import BibleKit
 
 
-var dateFormatter: DateFormatter {
+var preDateFormatter: DateFormatter {
     let formatter = DateFormatter()
-    formatter.dateFormat = "EEEE, MMMM d"
+    formatter.dateFormat = "EEEE "
     return formatter
 }
 
 
+var postDateFormatter: DateFormatter {
+    let formatter = DateFormatter()
+    formatter.dateFormat = ", MMMM d"
+    return formatter
+}
+
+func prettyTime(time: Date) -> String {
+   let calendar = Calendar.current
+   var period: String
+   switch calendar.component(.hour, from: time) {
+   case 0...5:
+       period = "Early Morning"
+   case 5...10:
+       period = "Morning"
+   case 11...14:
+       period = "Midday"
+   case 15...17:
+       period = "Afternoon"
+   case 18...20:
+       period = "Evening"
+   case 21...24:
+       period = "Night"
+   default:
+       period = ""
+   }
+   return preDateFormatter.string(from: time) + period + postDateFormatter.string(from: time)
+}
+
+
 @Model
-final class Entry {
+final class Entry: Identifiable {
+    var heading: String = ""
     var timestamp: Date
+
     var references: String = ""
-    var promptResponses: [PromptResponse]
+    
+    @Relationship(deleteRule: .cascade)
+    var promptResponses: [PromptResponse]?
     
     @Transient var style: Style  {
         get { Style(rawValue: _style)! }
@@ -30,21 +63,22 @@ final class Entry {
     }
     @Attribute var _style: Style.RawValue
     
-    init(style: Style, promptResponses: [PromptResponse], references: String = "", timestamp: Date = .now) {
+    init(style: Style, references: String = "", timestamp: Date = .now) {
+        self.heading = prettyTime(time: timestamp)
         self.timestamp = timestamp
         self._style = style.rawValue
         self.references = references
-        self.promptResponses = promptResponses
+        self.promptResponses = init_prompts(style: style)
     }
     
     func title() -> String {
-        return dateFormatter.string(from: self.timestamp)
+        return heading == "" ? prettyTime(time: self.timestamp) : heading
     }
     
     func sortedResponses() -> [PromptResponse] {
-        return self.promptResponses.sorted {
+        return self.promptResponses?.sorted {
             Int($0.order ?? Int.max) < Int($1.order ?? Int.max)
-        }
+        } ?? []
     }
 }
 
@@ -56,7 +90,7 @@ extension Entry: Hashable {
         lhs.style == rhs.style &&
         lhs.promptResponses == rhs.promptResponses
     }
-
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(timestamp)
         hasher.combine(style)
@@ -83,3 +117,4 @@ struct EntryVersionedSchema: VersionedSchema {
     static let models: [any PersistentModel.Type] = [Entry.self]
     static let versionIdentifier: Schema.Version = .init(1, 0, 0)
 }
+

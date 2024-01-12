@@ -11,12 +11,26 @@ import BibleKit
 
 
 struct BibleVersePicker: View {
-    @Binding var references: String
+    var entry: Entry
+    @State private var references: String
     @State private var parsedVerses: [String] = []
     @State private var debounceWorkItem: DispatchWorkItem?
+    @FocusState private var isFocused: Bool
+    @Environment(\.modelContext) private var modelContext
+    
+    init(entry: Entry) {
+        self.entry = entry
+        self.references = entry.references
+        self.parsedVerses = validateBibleVerses(verse: entry.references)
+    }
     
     func validateBibleVerses(verse: String) -> [String] {
         RefParser.parseReferences(verse).map({$0.toString()})
+    }
+    
+    func saveEntry() {
+        entry.references = references
+        try? modelContext.save()
     }
     
     var body: some View {
@@ -44,6 +58,12 @@ struct BibleVersePicker: View {
                     
                     // Schedule the work item to run after a delay
                     DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 0.5, execute: debounceWorkItem!)
+                }
+                .focused($isFocused)
+                .onChange(of: isFocused) { wasFocused, isFocused in
+                    if (wasFocused && !isFocused){
+                        saveEntry()
+                    }
                 }
                 .autocapitalization(.words)
                 .disableAutocorrection(true)

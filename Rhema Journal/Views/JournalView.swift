@@ -15,22 +15,18 @@ struct JournalView: View {
     let selectEntry: (Entry) -> Void
     let addEntry: () -> Void
     
-    @State private var needsToday: Bool = false
-    
     var body: some View {
         ScrollView(.vertical) {
-            if needsToday {
-                HStack {Spacer()}
-                CardView(action: addEntry) {
-                    HStack {
-                        Image(systemName: "plus")
-                        Text("Today")
-                        Spacer()
-                    }
-                    .foregroundStyle(Color.accentColor)
+            HStack {Spacer()}
+            CardView(action: addEntry) {
+                HStack {
+                    Image(systemName: "plus")
+                    Text("New Entry")
+                    Spacer()
                 }
-                Divider().foregroundStyle(Color.black)
+                .foregroundStyle(Color.accentColor)
             }
+            Divider().foregroundStyle(Color.black)
             
             VStack(alignment: .leading, spacing: 10) {
                 HStack {Spacer()}
@@ -44,10 +40,6 @@ struct JournalView: View {
                 }
                 .navigationDestination(for: Entry.self) { selectedEntry in
                     EntryView(entry: selectedEntry)
-                }
-                .onAppear {
-                    // Update the condition whenever the view appears
-                    needsToday = entries.isEmpty || !Calendar.current.isDateInToday(entries.first?.timestamp ?? Date.distantPast)
                 }
             }
         }

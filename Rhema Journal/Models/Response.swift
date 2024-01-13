@@ -10,7 +10,8 @@ import SwiftData
 
 
 @Model
-class PromptResponse {
+class PromptResponse: Identifiable {
+    var entry: Entry?
     var id = UUID()
     var prompt: String
     var response: String

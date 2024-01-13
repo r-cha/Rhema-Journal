@@ -18,7 +18,6 @@ struct ContentView: View {
     ) private var entries: [Entry]
     @State private var navigationPath: [Entry] = []
     @Environment(\.modelContext) private var modelContext
-    @Environment(\.colorScheme) var colorScheme: ColorScheme
     
     private var _userDefaults: UserDefaults = UserDefaults()
     
@@ -27,19 +26,10 @@ struct ContentView: View {
             JournalView(entries: entries) { entry in
                 withAnimation { navigationPath.append(entry) }
             } addEntry: {
-                let newEntry = Entry(
-                    style: Style.lectio,
-                    promptResponses: init_prompts(
-                        style: Style(rawValue: _userDefaults.string(forKey: "JournalPreference") ?? Style.lectio.rawValue)!
-                    ))
+                let style = Style(rawValue: _userDefaults.string(forKey: "JournalPreference") ?? Style.lectio.rawValue)
+                let newEntry = Entry(style: style!)
                 modelContext.insert(newEntry)
                 withAnimation { navigationPath.append(newEntry) }
-            } deleteEntry: { offsets in
-                offsets.forEach { index in
-                    let entry = entries[index]
-                    modelContext.delete(entry)
-                }
-                try? modelContext.save()
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
@@ -60,14 +50,6 @@ struct ContentView: View {
                     startPoint: .top, endPoint: .bottom
                 )
                 .edgesIgnoringSafeArea(.all)
-//                .overlay(
-//                    Image("Grain")
-//                        .resizable(resizingMode: .stretch)
-//                        .colorInvert()
-//                        .opacity(0.2)
-//                        .blendMode(.multiply)
-//                        .scaledToFill()
-//                )
             )
             .scrollContentBackground(.hidden)
             .scrollClipDisabled()

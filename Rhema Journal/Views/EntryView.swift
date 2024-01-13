@@ -1,47 +1,29 @@
-/*
- See the LICENSE.txt file for this sample’s licensing information.
- 
- Abstract:
- A reusable view for content presented as a card visually.
- */
-
 import SwiftUI
+import SwiftData
 
 import BibleKit
 
 
 struct EntryView: View {
     @Bindable var entry: Entry
-    @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) private var modelContext
-    
-    init(entry: Entry) {
-        self.entry = entry
-        UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).adjustsFontSizeToFitWidth = true
-    }
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         Form {
             Section {
-                BibleVersePicker(references: $entry.references)
-            } header: {
-                //Text("Scripture")
-            }.listRowBackground(Color.clear
-            ).background(.ultraThinMaterial, in: RoundedRectangle(
+                BibleVersePicker(entry: entry)
+            }
+            .listRowBackground(Color.clear)
+            .background(.ultraThinMaterial, in: RoundedRectangle(
                 cornerRadius: 8, style: .continuous
             ))
             
-            VStack {
-                ForEach(entry.promptResponses.sorted {
-                    Int($0.order ?? Int.max) < Int($1.order ?? Int.max)
-                }, id: \.self) { response in
-                    ResponseView(promptResponse: response).padding().background(.ultraThinMaterial, in: RoundedRectangle(
-                        cornerRadius: 8, style: .continuous
-                    ))
+            VStack(alignment: .leading, spacing: 10) {
+                ForEach(entry.sortedResponses()) { response in
+                    ResponseView(promptResponse: response)
                 }
-            } //header: {
-//                Text("Responses")
-//            }
+            }
             .listRowBackground(Color.clear)
         }
         .navigationTitle(entry.title())
@@ -53,14 +35,12 @@ struct EntryView: View {
             .edgesIgnoringSafeArea(.all)
         )
         .listRowBackground(Color.clear)
-        .background(.ultraThinMaterial, in: RoundedRectangle(
-            cornerRadius: 8, style: .continuous
-        ))
         .scrollContentBackground(.hidden)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing){
                 Button("Delete", systemImage: "trash", role: .destructive) {
                     modelContext.delete(entry)
+                    try? modelContext.save()
                     dismiss()
                 }
             }

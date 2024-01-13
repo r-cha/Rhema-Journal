@@ -21,7 +21,7 @@ struct ReferencePill: View {
             .background(Capsule(style:.circular).fill(.thinMaterial))
             .overlay(
                 Capsule(style:.circular)
-                    .stroke(.ultraThickMaterial, lineWidth: 1) // Define the border color and width
+                    .stroke(.ultraThickMaterial, lineWidth: 1)
             )
             .multilineTextAlignment(.center)
             .font(font)

@@ -31,7 +31,6 @@ struct CardView<Content: View>: View {
 
 struct JournalLabelContent: View {
     let entry: Entry
-    @State private var parsedVerses: [String] = []
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -46,8 +45,6 @@ struct JournalLabelContent: View {
                 }
             }
             HStack {Spacer()}
-        }.onAppear {
-            self.parsedVerses = RefParser.parseReferences(entry.references).map({$0.toString()})
         }
     }
 }

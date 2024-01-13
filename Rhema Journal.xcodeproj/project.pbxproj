@@ -10,11 +10,9 @@
 		7901C0A92AFE962F00442756 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901C0A82AFE962F00442756 /* SettingsView.swift */; };
 		7965BEAE2AFAFB9500062BEB /* BibleKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7965BEAD2AFAFB9500062BEB /* BibleKit */; };
 		7965BEB02AFAFFF300062BEB /* ReferencePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7965BEAF2AFAFFF300062BEB /* ReferencePicker.swift */; };
-		7965BEB22AFB006D00062BEB /* BibleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7965BEB12AFB006D00062BEB /* BibleData.swift */; };
 		79788F8A2AFBD30A00F9F760 /* ReferencePill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79788F892AFBD30A00F9F760 /* ReferencePill.swift */; };
 		798278882AF9876000955B61 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798278872AF9876000955B61 /* Style.swift */; };
 		7982788A2AF987A600955B61 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798278892AF987A600955B61 /* Response.swift */; };
-		798BA4AE2B4B4EFE00D047BB /* MaterialSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798BA4AD2B4B4EFE00D047BB /* MaterialSection.swift */; };
 		79AEAAAC2AF9AC7F003AC969 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAAB2AF9AC7F003AC969 /* JournalView.swift */; };
 		79AEAAAF2AF9ACF6003AC969 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAAE2AF9ACF6003AC969 /* Design.swift */; };
 		79AEAAB12AF9ADC7003AC969 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEAAB02AF9ADC7003AC969 /* CardView.swift */; };
@@ -29,31 +27,12 @@
 		79C723DA2AF8422C008F3783 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C723D92AF8422C008F3783 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		79C723E02AF8422C008F3783 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 79C723C52AF8422B008F3783 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 79C723CC2AF8422B008F3783;
-			remoteInfo = "Rhema Journal";
-		};
-		79C723EA2AF8422C008F3783 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 79C723C52AF8422B008F3783 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 79C723CC2AF8422B008F3783;
-			remoteInfo = "Rhema Journal";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		7901C0A82AFE962F00442756 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7965BEAF2AFAFFF300062BEB /* ReferencePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencePicker.swift; sourceTree = "<group>"; };
-		7965BEB12AFB006D00062BEB /* BibleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleData.swift; sourceTree = "<group>"; };
 		79788F892AFBD30A00F9F760 /* ReferencePill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencePill.swift; sourceTree = "<group>"; };
 		798278872AF9876000955B61 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		798278892AF987A600955B61 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		798BA4AD2B4B4EFE00D047BB /* MaterialSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialSection.swift; sourceTree = "<group>"; };
 		79AEAAAB2AF9AC7F003AC969 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		79AEAAAE2AF9ACF6003AC969 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		79AEAAB02AF9ADC7003AC969 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -67,8 +46,6 @@
 		79C723D42AF8422B008F3783 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		79C723D62AF8422C008F3783 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79C723D92AF8422C008F3783 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		79C723DF2AF8422C008F3783 /* Rhema JournalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rhema JournalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		79C723E92AF8422C008F3783 /* Rhema JournalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rhema JournalUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79FB9DF82B044E0F0040A2EF /* Rhema-Journal-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Rhema-Journal-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -78,20 +55,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7965BEAE2AFAFB9500062BEB /* BibleKit in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		79C723DC2AF8422C008F3783 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		79C723E62AF8422C008F3783 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +68,6 @@
 				798278872AF9876000955B61 /* Style.swift */,
 				798278892AF987A600955B61 /* Response.swift */,
 				79AEAAB62AF9AFEF003AC969 /* PreviewData.swift */,
-				7965BEB12AFB006D00062BEB /* BibleData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -121,7 +83,6 @@
 				7965BEAF2AFAFFF300062BEB /* ReferencePicker.swift */,
 				79788F892AFBD30A00F9F760 /* ReferencePill.swift */,
 				7901C0A82AFE962F00442756 /* SettingsView.swift */,
-				798BA4AD2B4B4EFE00D047BB /* MaterialSection.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,8 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				79C723CD2AF8422B008F3783 /* Rhema Journal.app */,
-				79C723DF2AF8422C008F3783 /* Rhema JournalTests.xctest */,
-				79C723E92AF8422C008F3783 /* Rhema JournalUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,42 +157,6 @@
 			productReference = 79C723CD2AF8422B008F3783 /* Rhema Journal.app */;
 			productType = "com.apple.product-type.application";
 		};
-		79C723DE2AF8422C008F3783 /* Rhema JournalTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 79C723F62AF8422C008F3783 /* Build configuration list for PBXNativeTarget "Rhema JournalTests" */;
-			buildPhases = (
-				79C723DB2AF8422C008F3783 /* Sources */,
-				79C723DC2AF8422C008F3783 /* Frameworks */,
-				79C723DD2AF8422C008F3783 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				79C723E12AF8422C008F3783 /* PBXTargetDependency */,
-			);
-			name = "Rhema JournalTests";
-			productName = "Rhema JournalTests";
-			productReference = 79C723DF2AF8422C008F3783 /* Rhema JournalTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		79C723E82AF8422C008F3783 /* Rhema JournalUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 79C723F92AF8422C008F3783 /* Build configuration list for PBXNativeTarget "Rhema JournalUITests" */;
-			buildPhases = (
-				79C723E52AF8422C008F3783 /* Sources */,
-				79C723E62AF8422C008F3783 /* Frameworks */,
-				79C723E72AF8422C008F3783 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				79C723EB2AF8422C008F3783 /* PBXTargetDependency */,
-			);
-			name = "Rhema JournalUITests";
-			productName = "Rhema JournalUITests";
-			productReference = 79C723E92AF8422C008F3783 /* Rhema JournalUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -246,14 +169,6 @@
 				TargetAttributes = {
 					79C723CC2AF8422B008F3783 = {
 						CreatedOnToolsVersion = 15.0.1;
-					};
-					79C723DE2AF8422C008F3783 = {
-						CreatedOnToolsVersion = 15.0.1;
-						TestTargetID = 79C723CC2AF8422B008F3783;
-					};
-					79C723E82AF8422C008F3783 = {
-						CreatedOnToolsVersion = 15.0.1;
-						TestTargetID = 79C723CC2AF8422B008F3783;
 					};
 				};
 			};
@@ -274,8 +189,6 @@
 			projectRoot = "";
 			targets = (
 				79C723CC2AF8422B008F3783 /* Rhema Journal */,
-				79C723DE2AF8422C008F3783 /* Rhema JournalTests */,
-				79C723E82AF8422C008F3783 /* Rhema JournalUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -290,20 +203,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79C723DD2AF8422C008F3783 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		79C723E72AF8422C008F3783 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -312,7 +211,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				79788F8A2AFBD30A00F9F760 /* ReferencePill.swift in Sources */,
-				798BA4AE2B4B4EFE00D047BB /* MaterialSection.swift in Sources */,
 				79C723D32AF8422B008F3783 /* ContentView.swift in Sources */,
 				79AEAAAF2AF9ACF6003AC969 /* Design.swift in Sources */,
 				79C723D52AF8422B008F3783 /* Entry.swift in Sources */,
@@ -324,41 +222,13 @@
 				7901C0A92AFE962F00442756 /* SettingsView.swift in Sources */,
 				79AEAAB92AF9B031003AC969 /* PreviewJournal.swift in Sources */,
 				79AEAAAC2AF9AC7F003AC969 /* JournalView.swift in Sources */,
-				7965BEB22AFB006D00062BEB /* BibleData.swift in Sources */,
 				79AEAAB12AF9ADC7003AC969 /* CardView.swift in Sources */,
 				79AEAAB32AF9AE88003AC969 /* EntryView.swift in Sources */,
 				79AEAABB2AF9B803003AC969 /* ResponseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79C723DB2AF8422C008F3783 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		79C723E52AF8422C008F3783 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		79C723E12AF8422C008F3783 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 79C723CC2AF8422B008F3783 /* Rhema Journal */;
-			targetProxy = 79C723E02AF8422C008F3783 /* PBXContainerItemProxy */;
-		};
-		79C723EB2AF8422C008F3783 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 79C723CC2AF8422B008F3783 /* Rhema Journal */;
-			targetProxy = 79C723EA2AF8422C008F3783 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		79C723F12AF8422C008F3783 /* Debug */ = {
@@ -498,14 +368,14 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "Archa-Solutions.Rhema-Journal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -532,91 +402,19 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "Archa-Solutions.Rhema-Journal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		79C723F72AF8422C008F3783 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Archa-Solutions.Rhema-JournalTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rhema Journal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rhema Journal";
-			};
-			name = Debug;
-		};
-		79C723F82AF8422C008F3783 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Archa-Solutions.Rhema-JournalTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rhema Journal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rhema Journal";
-			};
-			name = Release;
-		};
-		79C723FA2AF8422C008F3783 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Archa-Solutions.Rhema-JournalUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Rhema Journal";
-			};
-			name = Debug;
-		};
-		79C723FB2AF8422C008F3783 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Archa-Solutions.Rhema-JournalUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Rhema Journal";
 			};
 			name = Release;
 		};
@@ -637,24 +435,6 @@
 			buildConfigurations = (
 				79C723F42AF8422C008F3783 /* Debug */,
 				79C723F52AF8422C008F3783 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		79C723F62AF8422C008F3783 /* Build configuration list for PBXNativeTarget "Rhema JournalTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				79C723F72AF8422C008F3783 /* Debug */,
-				79C723F82AF8422C008F3783 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		79C723F92AF8422C008F3783 /* Build configuration list for PBXNativeTarget "Rhema JournalUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				79C723FA2AF8422C008F3783 /* Debug */,
-				79C723FB2AF8422C008F3783 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

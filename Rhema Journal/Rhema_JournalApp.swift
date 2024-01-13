@@ -10,10 +10,14 @@ import SwiftData
 
 @main
 struct Rhema_JournalApp: App {
+    init() {
+        UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).adjustsFontSizeToFitWidth = true
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: Entry.self)
+        .modelContainer(for: Entry.self, isAutosaveEnabled: true)
     }
 }

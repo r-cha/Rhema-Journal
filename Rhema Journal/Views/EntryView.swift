@@ -10,7 +10,6 @@ struct EntryView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        let _ = Self._printChanges()
         Form {
             Section {
                 BibleVersePicker(entry: entry)

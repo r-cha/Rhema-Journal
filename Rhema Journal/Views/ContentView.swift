@@ -22,7 +22,6 @@ struct ContentView: View {
     private var _userDefaults: UserDefaults = UserDefaults()
     
     var body: some View {
-        let _ = Self._printChanges()
         NavigationStack(path: $navigationPath) {
             JournalView(entries: entries) { entry in
                 withAnimation { navigationPath.append(entry) }

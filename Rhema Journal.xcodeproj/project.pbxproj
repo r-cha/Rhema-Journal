@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7901C0A92AFE962F00442756 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901C0A82AFE962F00442756 /* SettingsView.swift */; };
+		7916117D2B572E9B00157548 /* resizednew.png in Resources */ = {isa = PBXBuildFile; fileRef = 7916117C2B572E9B00157548 /* resizednew.png */; };
+		7916117F2B572EA600157548 /* resized.png in Resources */ = {isa = PBXBuildFile; fileRef = 7916117E2B572EA600157548 /* resized.png */; };
+		791611812B57321200157548 /* IconSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791611802B57321200157548 /* IconSetter.swift */; };
+		791611832B57409900157548 /* PromptSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791611822B57409900157548 /* PromptSelector.swift */; };
 		7965BEAE2AFAFB9500062BEB /* BibleKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7965BEAD2AFAFB9500062BEB /* BibleKit */; };
 		7965BEB02AFAFFF300062BEB /* ReferencePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7965BEAF2AFAFFF300062BEB /* ReferencePicker.swift */; };
 		79788F8A2AFBD30A00F9F760 /* ReferencePill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79788F892AFBD30A00F9F760 /* ReferencePill.swift */; };
@@ -29,6 +33,11 @@
 
 /* Begin PBXFileReference section */
 		7901C0A82AFE962F00442756 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		790D0D1B2B559A9700A60532 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7916117C2B572E9B00157548 /* resizednew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resizednew.png; sourceTree = "<group>"; };
+		7916117E2B572EA600157548 /* resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resized.png; sourceTree = "<group>"; };
+		791611802B57321200157548 /* IconSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSetter.swift; sourceTree = "<group>"; };
+		791611822B57409900157548 /* PromptSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptSelector.swift; sourceTree = "<group>"; };
 		7965BEAF2AFAFFF300062BEB /* ReferencePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencePicker.swift; sourceTree = "<group>"; };
 		79788F892AFBD30A00F9F760 /* ReferencePill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencePill.swift; sourceTree = "<group>"; };
 		798278872AF9876000955B61 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -61,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7916117B2B572E7C00157548 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				7916117E2B572EA600157548 /* resized.png */,
+				7916117C2B572E9B00157548 /* resizednew.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
 		798278852AF9869D00955B61 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +101,8 @@
 				7965BEAF2AFAFFF300062BEB /* ReferencePicker.swift */,
 				79788F892AFBD30A00F9F760 /* ReferencePill.swift */,
 				7901C0A82AFE962F00442756 /* SettingsView.swift */,
+				791611802B57321200157548 /* IconSetter.swift */,
+				791611822B57409900157548 /* PromptSelector.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,6 +135,7 @@
 		79C723CF2AF8422B008F3783 /* Rhema Journal */ = {
 			isa = PBXGroup;
 			children = (
+				7916117B2B572E7C00157548 /* Icons */,
 				79FB9DF82B044E0F0040A2EF /* Rhema-Journal-Info.plist */,
 				79C723D02AF8422B008F3783 /* Rhema_JournalApp.swift */,
 				798278862AF986CC00955B61 /* Views */,
@@ -122,6 +143,7 @@
 				79AEAAAD2AF9ACCD003AC969 /* Support */,
 				79C723D62AF8422C008F3783 /* Assets.xcassets */,
 				79C723D82AF8422C008F3783 /* Preview Content */,
+				790D0D1B2B559A9700A60532 /* README.md */,
 			);
 			path = "Rhema Journal";
 			sourceTree = "<group>";
@@ -198,7 +220,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7916117F2B572EA600157548 /* resized.png in Resources */,
 				79C723DA2AF8422C008F3783 /* Preview Assets.xcassets in Resources */,
+				7916117D2B572E9B00157548 /* resizednew.png in Resources */,
 				79C723D72AF8422C008F3783 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +245,8 @@
 				7982788A2AF987A600955B61 /* Response.swift in Sources */,
 				7901C0A92AFE962F00442756 /* SettingsView.swift in Sources */,
 				79AEAAB92AF9B031003AC969 /* PreviewJournal.swift in Sources */,
+				791611832B57409900157548 /* PromptSelector.swift in Sources */,
+				791611812B57321200157548 /* IconSetter.swift in Sources */,
 				79AEAAAC2AF9AC7F003AC969 /* JournalView.swift in Sources */,
 				79AEAAB12AF9ADC7003AC969 /* CardView.swift in Sources */,
 				79AEAAB32AF9AE88003AC969 /* EntryView.swift in Sources */,
@@ -235,7 +261,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "";
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -298,7 +326,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "";
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -375,7 +405,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "Archa-Solutions.Rhema-Journal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -409,7 +439,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "Archa-Solutions.Rhema-Journal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

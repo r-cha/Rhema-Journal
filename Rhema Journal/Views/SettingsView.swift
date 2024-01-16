@@ -10,41 +10,15 @@ import SwiftUI
 import SwiftData
 
 struct SettingsView: View {
-    private var _userDefaults: UserDefaults
-    @State private var style: Style
-    
-    init() {
-        self._userDefaults = UserDefaults()
-        self.style = Style(rawValue: _userDefaults.string(forKey: "JournalPreference") ?? Style.lectio.rawValue)!
-    }
     
     var body: some View {
         Form {
             Section {
-                VStack {
-                    Text("Select the journal style for new entries to your journal. Changing this settings does not affect previous entries.").font(.body)
-                    Divider()
-                    Picker("Journal Type", selection: $style) {
-                        ForEach(Style.allCases, id: \.self) { type in
-                            Text(type.rawValue)
-                        }
-                    }.onChange(of: style) {
-                        _userDefaults.setValue(style.rawValue, forKey: "JournalPreference")
-                    }
-                    Divider()
-                    VStack(alignment: .leading, spacing: 10) {
-                        HStack {Spacer()}
-                        Text("Prompts")
-                            .font(.headline)
-                        ForEach(StylePrompts[style] ?? [], id: \.self) { prompt in
-                            Text(prompt)
-                        }
-                    }
-                }
-                .padding()
-                .background(.ultraThinMaterial, in: RoundedRectangle(
-                    cornerRadius: 8, style: .continuous
-                ))
+                PromptSelector()
+            }
+            .listRowBackground(Color.clear)
+            Section {
+                IconSetter()
             }
             .listRowBackground(Color.clear)
         }
@@ -58,4 +32,8 @@ struct SettingsView: View {
         )
         .scrollContentBackground(.hidden)
     }
+}
+
+#Preview {
+    SettingsView()
 }
